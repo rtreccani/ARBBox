@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Mar  5 14:44:49 2021
+# Process ID: 17380
+# Current directory: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16876 C:\Users\Raphael\Documents\Uni\FYP\Fpgastuff\ddr3_build2.xpr
+# Log file: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/vivado.log
+# Journal file: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.xpr
+launch_runs synth_1 -jobs 15
+wait_on_run synth_1
+import_files C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/new/top.sv
+import_files
+reset_run synth_1
+launch_runs synth_1 -jobs 15
+wait_on_run synth_1
+launch_runs impl_1 -jobs 15
+wait_on_run impl_1

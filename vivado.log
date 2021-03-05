@@ -1,0 +1,56 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Mar  5 14:44:49 2021
+# Process ID: 17380
+# Current directory: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16876 C:\Users\Raphael\Documents\Uni\FYP\Fpgastuff\ddr3_build2.xpr
+# Log file: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/vivado.log
+# Journal file: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2' since last save.
+INFO: [filemgmt 56-1] Default IP Output Path : Directory not found as 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.gen/sources_1' instead.
+INFO: [filemgmt 56-1] IPUserFilesDir: Directory not found as 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.ip_user_files'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.ip_user_files' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/top.sv'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/new/top.sv' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Raphael/Documents/cores/managed_ip_project/mig.prj'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/cores/managed_ip_project/mig.prj' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Raphael/Documents/Uni/constraint/alchitry.xdc'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/alchitry.xdc' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Raphael/Documents/Uni/constraint/io.xdc'; using path 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/io.xdc' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 1003.066 ; gain = 0.000
+launch_runs synth_1 -jobs 15
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Mar  5 14:45:14 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/runme.log
+import_files C:/Users/Raphael/Documents/alchitry/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/new/top.sv
+import_files
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+INFO: [IP_Flow 19-7005] Skipping external file c:/Users/Raphael/Documents/alchitry/ddr3_build2/cores/managed_ip_project/mig.prj
+import_files: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1003.066 ; gain = 0.000
+reset_run synth_1
+launch_runs synth_1 -jobs 15
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Mar  5 14:49:08 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 15
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Mar  5 14:51:06 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  5 14:55:42 2021...
