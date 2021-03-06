@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tftg256-1
 
@@ -86,11 +87,14 @@ set_property ip_output_repo c:/Users/Raphael/Documents/alchitry/ddr3_build2/work
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib -sv C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv
-read_verilog -library xil_defaultlib {
+read_verilog -library xil_defaultlib -sv {
+  C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv
+  C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv
   C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v
   C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v
+  C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv
 }
+set_property is_global_include true [get_files C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv]
 read_ip -quiet C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
@@ -115,8 +119,8 @@ set_property used_in_implementation false [get_files C:/Users/Raphael/Documents/
 read_xdc C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/io.xdc
 set_property used_in_implementation false [get_files C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/io.xdc]
 
-read_xdc {{C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc}}]
+read_xdc C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/components/au.xdc
+set_property used_in_implementation false [get_files C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/components/au.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

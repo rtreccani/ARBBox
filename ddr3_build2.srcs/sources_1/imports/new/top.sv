@@ -31,7 +31,15 @@ module top (
     input       [4:0]    io_button,
     input       [23:0]   io_dip
 );
-  
+
+io_IF io();
+assign io.sys_led = led;
+assign io.led = io_led;
+assign io.seg = io_seg;
+assign io.sel = io_sel;
+assign io.button = io_button;
+assign io.dip = io_dip;
+
 
 reg rst;
 
@@ -127,24 +135,33 @@ reg             M_cache_rd_cmd_valid;
 reg             M_cache_flush;
 reg     [130:0] M_cache_mem_out;
 
+ddr3_IF ddr();
+
+userland(
+	.ddr(ddr),
+	.io(io),
+	.clk(M_mig_ui_clk)
+);
 
 lru_cache_2 cache (
     .clk(M_mig_ui_clk),
     .rst(rst),
-    .wr_addr(M_cache_wr_addr),
-    .wr_data(M_cache_wr_data),
-    .wr_valid(M_cache_wr_valid),
-    .rd_addr(M_cache_rd_addr),
-    .rd_cmd_valid(M_cache_rd_cmd_valid),
-    .flush(M_cache_flush),
+    .wr_addr(ddr.wr_addr),
+    .wr_data(ddr.wr_data),
+    .wr_valid(ddr.wr_valid),
+    .rd_addr(ddr.rd_addr),
+    .rd_cmd_valid(ddr.rd_cmd_valid),
+    .flush(ddr.flush),
+    .wr_ready(ddr.wr_ready),
+    .rd_ready(ddr.rd_ready),
+    .rd_data(ddr.rd_data),
+    .rd_data_valid(ddr.rd_data_valid),
+    .flush_ready(ddr.flush_ready),
     .mem_out(M_cache_mem_out),
-    .wr_ready(M_cache_wr_ready),
-    .rd_ready(M_cache_rd_ready),
-    .rd_data(M_cache_rd_data),
-    .rd_data_valid(M_cache_rd_data_valid),
-    .flush_ready(M_cache_flush_ready),
     .mem_in(M_cache_mem_in)
 );
+
+
 
 always @(*) begin
     M_state_d = M_state_q;
@@ -177,61 +194,6 @@ always @(*) begin
     usb_tx = usb_rx;
     M_mig_mem_in = M_cache_mem_in;
     M_cache_mem_out = M_mig_mem_out;
-    M_cache_flush = 1'h0;
-    M_cache_wr_addr = M_address_q;
-    M_cache_wr_data = M_address_q;
-    M_cache_wr_valid = 1'h0;
-    M_cache_rd_addr = M_address_q;
-    M_cache_rd_cmd_valid = 1'h0;
-
-    case (M_state_q)
-        WRITE_DATA_state: begin
-            if (M_cache_wr_ready) begin
-                M_cache_wr_valid = 1'h1;
-                M_address_d = M_address_q + 1'h1;
-                if (M_address_q == 8'hff) begin
-                    M_state_d = READ_CMD_state;
-                    M_address_d = 1'h0;
-                end
-            end
-        end
-
-        READ_CMD_state: begin
-            if (M_cache_rd_ready) begin
-                M_cache_rd_cmd_valid = 1'h1;
-                M_state_d = WAIT_READ_state;
-            end
-        end
-
-        WAIT_READ_state: begin
-            if (M_cache_rd_data_valid) begin
-                M_led_reg_d = M_cache_rd_data;
-                M_state_d = DELAY_state;
-                M_address_d = M_address_q + 1'h1;
-            end
-        end
-
-        DELAY_state: begin
-            M_ctr_d = M_ctr_q + 1'h1;
-            if ((&M_ctr_q)) begin
-                M_state_d = READ_CMD_state;
-            end
-        end
-    endcase
-end
-
-always @(posedge M_mig_ui_clk) begin
-    if (rst == 1'b1) begin
-        M_ctr_q <= 1'h0;
-        M_address_q <= 1'h0;
-        M_led_reg_q <= 1'h0;
-        M_state_q <= 1'h0;
-    end else begin
-        M_ctr_q <= M_ctr_d;
-        M_address_q <= M_address_d;
-        M_led_reg_q <= M_led_reg_d;
-        M_state_q <= M_state_d;
-    end
 end
   
 endmodule

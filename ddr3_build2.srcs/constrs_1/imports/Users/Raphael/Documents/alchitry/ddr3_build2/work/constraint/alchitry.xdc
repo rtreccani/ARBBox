@@ -1,5 +1,5 @@
 # clk => 100000000Hz
-create_clock -period 10.0 -name clk_0 -waveform {0.000 5.000} [get_ports clk]
+#create_clock -period 10.0 -name clk_0 -waveform {0.000 5.000} [get_ports clk]
 set_property PACKAGE_PIN N14 [get_ports {clk}]
 set_property IOSTANDARD LVCMOS33 [get_ports {clk}]
 set_property PACKAGE_PIN P6 [get_ports {rst_n}]

@@ -5,7 +5,7 @@
 
 # XDC: imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/io.xdc
 
-# XDC: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc
+# XDC: imports/components/au.xdc
 
 # IP: ip/mig_7series_0/mig_7series_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mig_7series_0 || ORIG_REF_NAME==mig_7series_0} -quiet] -quiet
