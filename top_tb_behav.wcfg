@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="497490000fs"></ZoomStartTime>
+      <ZoomEndTime time="853490001fs"></ZoomEndTime>
+      <Cursor1Time time="300000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="200"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/top_tb/t/u/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/t/u/currentAddress" type="array">
+      <obj_property name="ElementShortName">currentAddress[7:0]</obj_property>
+      <obj_property name="ObjectShortName">currentAddress[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/t/u/newAddress" type="array">
+      <obj_property name="ElementShortName">newAddress[7:0]</obj_property>
+      <obj_property name="ObjectShortName">newAddress[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/t/u/currentState" type="array">
+      <obj_property name="ElementShortName">currentState[31:0]</obj_property>
+      <obj_property name="ObjectShortName">currentState[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/t/u/newState" type="array">
+      <obj_property name="ElementShortName">newState[31:0]</obj_property>
+      <obj_property name="ObjectShortName">newState[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/t/u/newCounter" type="array">
+      <obj_property name="ElementShortName">newCounter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">newCounter[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/t/u/currentCounter" type="array">
+      <obj_property name="ElementShortName">currentCounter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">currentCounter[31:0]</obj_property>
+   </wvobject>
+</wave_config>

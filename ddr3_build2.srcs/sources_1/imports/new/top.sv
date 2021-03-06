@@ -107,20 +107,7 @@ mig_wrapper_1 mig (
 );
  
 
-localparam  WRITE_DATA_state    =   2'd0;
-localparam  READ_CMD_state      =   2'd1;
-localparam  WAIT_READ_state     =   2'd2;
-localparam  DELAY_state         =   2'd3;
 
-//LRU cache connections
-reg     [1:0]   M_state_d       =   WRITE_DATA_state;
-reg     [23:0]  M_ctr_q         =   1'h0;
-reg     [1:0]   M_state_q       =   WRITE_DATA_state;
-reg     [23:0]  M_ctr_d         =   1'h0;
-reg     [7:0]   M_address_q     =   1'h0;
-reg     [7:0]   M_address_d     =   1'h0;
-reg     [7:0]   M_led_reg_q     =   1'h0;
-reg     [7:0]   M_led_reg_d     =   1'h0;
 wire            M_cache_wr_ready;
 wire            M_cache_rd_ready;
 wire    [7:0]   M_cache_rd_data;
@@ -137,7 +124,7 @@ reg     [130:0] M_cache_mem_out;
 
 ddr3_IF ddr();
 
-userland(
+userland u(
 	.ddr(ddr),
 	.io(io),
 	.clk(M_mig_ui_clk)
@@ -164,14 +151,7 @@ lru_cache_2 cache (
 
 
 always @(*) begin
-    M_state_d = M_state_q;
-    M_ctr_d = M_ctr_q;
-    M_address_d = M_address_q;
-    M_led_reg_d = M_led_reg_q;
 
-    io_led = 24'h000000;
-    io_seg = 8'hff;
-    io_sel = 4'hf;
     M_clk_wiz_clk_in1 = clk;
     M_clk_wiz_reset = !rst_n;
     ddr3_addr = M_mig_ddr3_addr;
@@ -190,7 +170,6 @@ always @(*) begin
     M_mig_clk_ref = M_clk_wiz_clk_out2;
     M_mig_sys_rst = !M_clk_wiz_locked;
     rst = M_mig_sync_rst;
-    led = M_led_reg_q;
     usb_tx = usb_rx;
     M_mig_mem_in = M_cache_mem_in;
     M_cache_mem_out = M_mig_mem_out;
