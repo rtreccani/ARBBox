@@ -8,7 +8,6 @@ module userland(
 
 reg [7:0] address;
 
-
 heartbeat #(.CLKFREQ(81250000)) h(
 	.clk(clk),
 	.beat(io.sys_led[7])
@@ -23,8 +22,9 @@ typedef enum {
 	READ_DELAY
 } state_t;
 
-state_t currentState;
+(* fsm_encoding = "one_hot" *) state_t currentState;
 state_t nextState;
+
 
 always @(posedge clk) begin
 	currentState <= nextState;
@@ -67,8 +67,12 @@ always @(posedge clk) begin
 		
 		ONEIN : begin
 			if(usb.newDataIn) begin
-				FIFO[1] <= usb.dataIn;
-				nextState <= TWOIN;
+				if(FIFO[0] == 'h52) begin //read command
+					nextState <= READ;
+				end else begin
+					FIFO[1] <= usb.dataIn;
+					nextState <= TWOIN;
+				end
 			end
 		end
 		
@@ -77,10 +81,7 @@ always @(posedge clk) begin
 				FIFO[2] <= usb.dataIn;
 				if(FIFO[0] == 'h57) begin
 					nextState <= WRITE;
-				end else if(FIFO[0] == 'h52) begin
-					nextState <= READ;
-				end
-				else begin
+				end else begin
 					nextState <= IDLE;
 				end
 			end

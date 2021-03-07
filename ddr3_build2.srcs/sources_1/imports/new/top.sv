@@ -175,7 +175,6 @@ lru_cache_2 cache (
 
 
 always @(*) begin
-
     M_clk_wiz_clk_in1 = clk;
     M_clk_wiz_reset = !rst_n;
     ddr3_addr = M_mig_ddr3_addr;
