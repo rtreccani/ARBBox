@@ -40,7 +40,6 @@ assign io.sel = io_sel;
 assign io.button = io_button;
 assign io.dip = io_dip;
 
-
 reg rst;
 
 //wires for the clk_wiz object
@@ -122,12 +121,37 @@ reg             M_cache_rd_cmd_valid;
 reg             M_cache_flush;
 reg     [130:0] M_cache_mem_out;
 
+
+usb_IF usb();
+
+serialRx #(.CLK_PER_BIT(705)) sr(
+	.clk(M_mig_ui_clk),
+	.rst(M_mig_sys_rst),
+	.rx(usb_rx),
+	.data(usb.dataIn),
+	.new_data(usb.newDataIn)
+);
+
+serialTx #(.CLK_PER_BIT(705)) st(
+	.clk(M_mig_ui_clk),
+	.rst(M_mig_sys_rst),
+	.tx(usb_tx),
+	.data(usb.dataOut),
+	.new_data(usb.newDataOut),
+	.block('b0)
+);
+
+
 ddr3_IF ddr();
+
+
 
 userland u(
 	.ddr(ddr),
 	.io(io),
-	.clk(M_mig_ui_clk)
+	.clk(M_mig_ui_clk),
+	.rst(M_mig_sys_rst),
+	.usb(usb)
 );
 
 lru_cache_2 cache (
@@ -170,7 +194,6 @@ always @(*) begin
     M_mig_clk_ref = M_clk_wiz_clk_out2;
     M_mig_sys_rst = !M_clk_wiz_locked;
     rst = M_mig_sync_rst;
-    usb_tx = usb_rx;
     M_mig_mem_in = M_cache_mem_in;
     M_cache_mem_out = M_mig_mem_out;
 end

@@ -20,4 +20,15 @@ endinterface : ddr3_IF
  	logic [3:0] sel;
  	logic [4:0] button;
  	logic [23:0] dip;
+ 	logic usb_tx;
+ 	logic usb_rx;
  endinterface : io_IF
+ 
+ interface usb_IF;
+ 	logic [7:0] dataIn;
+ 	logic newDataIn;
+ 	logic block;
+ 	logic busyOut;
+ 	logic [7:0] dataOut;
+ 	logic newDataOut;
+ endinterface : usb_IF
