@@ -29,17 +29,22 @@ state_t nextState;
 always @(posedge clk) begin
 	currentState <= nextState;
 	case (currentState)
-		IDLE : io.sys_led[5:0] =       'b000001;
-		ONEIN : io.sys_led[5:0] =      'b000010;
-		TWOIN : io.sys_led[5:0] =      'b000011;
-		WRITE : io.sys_led[5:0] =      'b000100;
-		READ : io.sys_led[5:0] =       'b000101;
-		READ_DELAY : io.sys_led[5:0] = 'b000110;
-		default : io.sys_led[5:0] =    'b111111;
+		IDLE : io.sys_led[2:0] =       'b001;
+		ONEIN : io.sys_led[2:0] =      'b010;
+		TWOIN : io.sys_led[2:0] =      'b011;
+		WRITE : io.sys_led[2:0] =      'b100;
+		READ : io.sys_led[2:0] =       'b101;
+		READ_DELAY : io.sys_led[2:0] = 'b110;
+		default : io.sys_led[2:0] =    'b111;
 	endcase
 end
 
 reg [7:0] FIFO [3];
+
+assign io.sys_led[3] = ddr.wr_ready;
+assign io.sys_led[4] = ddr.rd_ready;
+
+
 
 initial begin 
 	currentState <= IDLE;
@@ -52,6 +57,7 @@ always @(posedge clk) begin
 
 	//sensible defaults 
 	ddr.wr_valid <= 'b0;
+	ddr.flush <= 'b0;
 	ddr.rd_cmd_valid <= 'b0;
 	usb.newDataOut <= 'b0;
 	currentState <= nextState;
@@ -67,37 +73,37 @@ always @(posedge clk) begin
 		
 		ONEIN : begin
 			if(usb.newDataIn) begin
-				if(FIFO[0] == 'h52) begin //read command
-					nextState <= READ;
-				end else begin
-					FIFO[1] <= usb.dataIn;
-					nextState <= TWOIN;
-				end
+				FIFO[1] <= usb.dataIn;
+				case(FIFO[0])
+					'h52    : nextState <= READ;
+					'h57    : nextState <= TWOIN;
+					default : nextState <= IDLE;
+				endcase
 			end
 		end
 		
 		TWOIN : begin
 			if(usb.newDataIn) begin
 				FIFO[2] <= usb.dataIn;
-				if(FIFO[0] == 'h57) begin
-					nextState <= WRITE;
-				end else begin
-					nextState <= IDLE;
-				end
+				nextState <= WRITE;
 			end
 		end
 		
 		WRITE : begin
-			ddr.wr_addr <= {19'b0, FIFO[1]};
-			ddr.wr_data <= FIFO[2];
-			ddr.wr_valid <= 'b1;
-			nextState <= IDLE;
+			if(ddr.wr_ready) begin
+				ddr.wr_addr <= FIFO[1];
+				ddr.wr_data <= FIFO[2];
+				ddr.wr_valid <= 'b1;
+				nextState <= IDLE;
+			end
 		end
 		
 		READ : begin
-			ddr.rd_addr <= {19'b0, FIFO[1]};
-			ddr.rd_cmd_valid <= 'b1;
-			nextState <= READ_DELAY;
+			if(ddr.rd_ready) begin
+				ddr.rd_addr <= FIFO[1];
+				ddr.rd_cmd_valid <= 'b1;
+				nextState <= READ_DELAY;
+			end
 		end
 		
 		READ_DELAY : begin
@@ -107,7 +113,12 @@ always @(posedge clk) begin
 				nextState <= IDLE;
 			end
 		end
+		default : nextState <= IDLE;
 	endcase	
+	if(rst) begin
+		nextState <= IDLE;
+		ddr.flush <= 'b1;
+	end
 end
 
 endmodule

@@ -40,123 +40,76 @@ assign io.sel = io_sel;
 assign io.button = io_button;
 assign io.dip = io_dip;
 
-reg rst;
 
 //wires for the clk_wiz object
-wire M_clk_wiz_clk_out1;
-wire M_clk_wiz_clk_out2;
-wire M_clk_wiz_clk_out3;
-reg M_clk_wiz_reset;
-reg M_clk_wiz_clk_in1;
+wire clk100;
+wire clk200;
+reg clk_lock;
 
 //connections to the clock wiz and it's instantiation
 clk_wiz_0 clk_wiz (
-.reset(M_clk_wiz_reset),
-.clk_in1(M_clk_wiz_clk_in1),
-.clk_out1(M_clk_wiz_clk_out1),
-.clk_out2(M_clk_wiz_clk_out2),
-.clk_out3(M_clk_wiz_clk_out3),
-.locked(M_clk_wiz_locked)
+.reset(~rst_n),
+.clk_in1(clk),
+.clk_out1(clk100),
+.clk_out2(clk200),
+.locked(clk_lock)
 );
 
-
-wire    [13:0]  M_mig_ddr3_addr;
-wire    [2:0]   M_mig_ddr3_ba;
-wire            M_mig_ddr3_ras_n;
-wire            M_mig_ddr3_cas_n;
-wire            M_mig_ddr3_we_n;
-wire            M_mig_ddr3_reset_n;
-wire            M_mig_ddr3_ck_p;
-wire            M_mig_ddr3_ck_n;
-wire            M_mig_ddr3_cke;
-wire            M_mig_ddr3_cs_n;
-wire    [1:0]   M_mig_ddr3_dm;
-wire            M_mig_ddr3_odt;
-wire    [130:0] M_mig_mem_out;
-wire            M_mig_ui_clk;
-wire            M_mig_sync_rst;
-reg             M_mig_sys_clk;
-reg             M_mig_clk_ref;
-reg     [176:0] M_mig_mem_in;
-reg             M_mig_sys_rst;
+wire    [130:0] lru_native_out;
+reg     [176:0] lru_native_in;
 
 mig_wrapper_1 mig (
     .ddr3_dq(ddr3_dq),
     .ddr3_dqs_n(ddr3_dqs_n),
     .ddr3_dqs_p(ddr3_dqs_p),
-    .sys_clk(M_mig_sys_clk),
-    .clk_ref(M_mig_clk_ref),
-    .mem_in(M_mig_mem_in),
-    .sys_rst(M_mig_sys_rst),
-    .ddr3_addr(M_mig_ddr3_addr),
-    .ddr3_ba(M_mig_ddr3_ba),
-    .ddr3_ras_n(M_mig_ddr3_ras_n),
-    .ddr3_cas_n(M_mig_ddr3_cas_n),
-    .ddr3_we_n(M_mig_ddr3_we_n),
-    .ddr3_reset_n(M_mig_ddr3_reset_n),
-    .ddr3_ck_p(M_mig_ddr3_ck_p),
-    .ddr3_ck_n(M_mig_ddr3_ck_n),
-    .ddr3_cke(M_mig_ddr3_cke),
-    .ddr3_cs_n(M_mig_ddr3_cs_n),
-    .ddr3_dm(M_mig_ddr3_dm),
-    .ddr3_odt(M_mig_ddr3_odt),
-    .mem_out(M_mig_mem_out),
-    .ui_clk(M_mig_ui_clk),
-    .sync_rst(M_mig_sync_rst)
+    .sys_clk(clk100),
+    .clk_ref(clk200),
+    .mem_in(lru_native_in),
+    .sys_rst(!clk_lock),
+    .ddr3_addr(ddr3_addr),
+    .ddr3_ba(ddr3_ba),
+    .ddr3_ras_n(ddr3_ras_n),
+    .ddr3_cas_n(ddr3_cas_n),
+    .ddr3_we_n(ddr3_we_n),
+    .ddr3_reset_n(ddr3_reset_n),
+    .ddr3_ck_p(ddr3_ck_p),
+    .ddr3_ck_n(ddr3_ck_n),
+    .ddr3_cke(ddr3_cke),
+    .ddr3_cs_n(ddr3_cs_n),
+    .ddr3_dm(ddr3_dm),
+    .ddr3_odt(ddr3_odt),
+    .mem_out(lru_native_out),
+    .ui_clk(ui_clk),
+    .sync_rst(ui_rst)
 );
- 
-
-
-wire            M_cache_wr_ready;
-wire            M_cache_rd_ready;
-wire    [7:0]   M_cache_rd_data;
-wire            M_cache_rd_data_valid;
-wire            M_cache_flush_ready;
-wire    [176:0] M_cache_mem_in;
-reg     [27:0]  M_cache_wr_addr;
-reg     [7:0]   M_cache_wr_data;
-reg             M_cache_wr_valid;
-reg     [27:0]  M_cache_rd_addr;
-reg             M_cache_rd_cmd_valid;
-reg             M_cache_flush;
-reg     [130:0] M_cache_mem_out;
-
 
 usb_IF usb();
-
-serialRx #(.CLK_PER_BIT(705)) sr(
-	.clk(M_mig_ui_clk),
-	.rst(M_mig_sys_rst),
+serialRx #(.CLK_PER_BIT(81)) sr(
+	.clk(ui_clk),
+	.rst(ui_rst),
 	.rx(usb_rx),
 	.data(usb.dataIn),
 	.new_data(usb.newDataIn)
 );
-
-serialTx #(.CLK_PER_BIT(705)) st(
-	.clk(M_mig_ui_clk),
-	.rst(M_mig_sys_rst),
+serialTx #(.CLK_PER_BIT(81)) st(
+	.clk(ui_clk),
+	.rst(ui_rst),
 	.tx(usb_tx),
 	.data(usb.dataOut),
 	.new_data(usb.newDataOut),
 	.block('b0)
 );
-
-
 ddr3_IF ddr();
-
-
-
 userland u(
 	.ddr(ddr),
 	.io(io),
-	.clk(M_mig_ui_clk),
-	.rst(M_mig_sys_rst),
+	.clk(ui_clk),
+	.rst(ui_rst),
 	.usb(usb)
 );
-
 lru_cache_2 cache (
-    .clk(M_mig_ui_clk),
-    .rst(rst),
+    .clk(ui_clk),
+    .rst(ui_rst),
     .wr_addr(ddr.wr_addr),
     .wr_data(ddr.wr_data),
     .wr_valid(ddr.wr_valid),
@@ -168,33 +121,9 @@ lru_cache_2 cache (
     .rd_data(ddr.rd_data),
     .rd_data_valid(ddr.rd_data_valid),
     .flush_ready(ddr.flush_ready),
-    .mem_out(M_cache_mem_out),
-    .mem_in(M_cache_mem_in)
+    .mem_out(lru_native_out),
+    .mem_in(lru_native_in)
 );
 
-
-
-always @(*) begin
-    M_clk_wiz_clk_in1 = clk;
-    M_clk_wiz_reset = !rst_n;
-    ddr3_addr = M_mig_ddr3_addr;
-    ddr3_ba = M_mig_ddr3_ba;
-    ddr3_ras_n = M_mig_ddr3_ras_n;
-    ddr3_cas_n = M_mig_ddr3_cas_n;
-    ddr3_we_n = M_mig_ddr3_we_n;
-    ddr3_reset_n = M_mig_ddr3_reset_n;
-    ddr3_ck_p = M_mig_ddr3_ck_p;
-    ddr3_ck_n = M_mig_ddr3_ck_n;
-    ddr3_cke = M_mig_ddr3_cke;
-    ddr3_cs_n = M_mig_ddr3_cs_n;
-    ddr3_dm = M_mig_ddr3_dm;
-    ddr3_odt = M_mig_ddr3_odt;
-    M_mig_sys_clk = M_clk_wiz_clk_out1;
-    M_mig_clk_ref = M_clk_wiz_clk_out2;
-    M_mig_sys_rst = !M_clk_wiz_locked;
-    rst = M_mig_sync_rst;
-    M_mig_mem_in = M_cache_mem_in;
-    M_cache_mem_out = M_mig_mem_out;
-end
   
 endmodule
