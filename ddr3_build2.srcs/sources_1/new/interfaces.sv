@@ -32,3 +32,21 @@ endinterface : ddr3_IF
  	logic [7:0] dataOut;
  	logic newDataOut;
  endinterface : usb_IF
+ 
+ interface usb_buff_IF;
+ 	logic [7:0] byteRx;
+ 	logic byteAvail;
+ 	logic takeByte;
+ 	
+ 	logic [15:0] wordRx;
+ 	logic wordAvail;
+ 	logic takeWord;
+ 	
+ 	logic [31:0] longRx;
+ 	logic longAvail;
+ 	logic takeLong;
+ 	
+ 	logic busyOut;
+ 	logic [7:0] dataOut;
+ 	logic newDataOut;
+ endinterface : usb_buff_IF

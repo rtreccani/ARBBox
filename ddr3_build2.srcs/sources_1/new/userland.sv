@@ -39,7 +39,10 @@ always @(posedge clk) begin
 	endcase
 end
 
-reg [7:0] FIFO [3];
+reg [7:0] cmd_buff;
+reg [31:0] addr_buff;
+reg [15:0] data_buff;
+
 
 assign io.sys_led[3] = ddr.wr_ready;
 assign io.sys_led[4] = ddr.rd_ready;
@@ -51,7 +54,7 @@ initial begin
 	nextState <= IDLE;
 end
 
-assign io.led = {FIFO[2], FIFO[1], FIFO[0]};
+
 
 always @(posedge clk) begin
 
@@ -65,7 +68,7 @@ always @(posedge clk) begin
 	
 	case(currentState)
 		IDLE : begin
-			if(usb.newDataIn) begin
+			if(usb.byteAvail) begin
 				FIFO[0] <= usb.dataIn;
 				nextState <= ONEIN;
 			end
@@ -122,4 +125,3 @@ always @(posedge clk) begin
 end
 
 endmodule
-

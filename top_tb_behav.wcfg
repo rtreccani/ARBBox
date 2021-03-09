@@ -3,50 +3,61 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="top_tb_behav.wdb" id="1">
+      <db_ref path="usbVariableBuffer_tb_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="top_tb" />
+            <top_module name="usbVariableBuffer_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="497490000fs"></ZoomStartTime>
-      <ZoomEndTime time="853490001fs"></ZoomEndTime>
-      <Cursor1Time time="300000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="71601fs"></ZoomEndTime>
+      <Cursor1Time time="14200fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="200"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <ValueColumnWidth column_width="112"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject fp_name="/top_tb/t/u/clk" type="logic">
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/usbVariableBuffer_tb/b/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_tb/t/u/currentAddress" type="array">
-      <obj_property name="ElementShortName">currentAddress[7:0]</obj_property>
-      <obj_property name="ObjectShortName">currentAddress[7:0]</obj_property>
+   <wvobject fp_name="/usbVariableBuffer_tb/b/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_tb/t/u/newAddress" type="array">
-      <obj_property name="ElementShortName">newAddress[7:0]</obj_property>
-      <obj_property name="ObjectShortName">newAddress[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject fp_name="/usbVariableBuffer_tb/b/usbRx" type="array">
+      <obj_property name="ElementShortName">usbRx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">usbRx[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_tb/t/u/currentState" type="array">
+   <wvobject fp_name="/usbVariableBuffer_tb/b/newRx" type="logic">
+      <obj_property name="ElementShortName">newRx</obj_property>
+      <obj_property name="ObjectShortName">newRx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/usbVariableBuffer_tb/byteRx" type="array">
+      <obj_property name="ElementShortName">byteRx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">byteRx[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/usbVariableBuffer_tb/b/FIFO" type="array">
+      <obj_property name="ElementShortName">FIFO[0:3][7:0]</obj_property>
+      <obj_property name="ObjectShortName">FIFO[0:3][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/usbVariableBuffer_tb/b/currentState" type="array">
       <obj_property name="ElementShortName">currentState[31:0]</obj_property>
       <obj_property name="ObjectShortName">currentState[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_tb/t/u/newState" type="array">
-      <obj_property name="ElementShortName">newState[31:0]</obj_property>
-      <obj_property name="ObjectShortName">newState[31:0]</obj_property>
+   <wvobject fp_name="/usbVariableBuffer_tb/b/nextState" type="array">
+      <obj_property name="ElementShortName">nextState[31:0]</obj_property>
+      <obj_property name="ObjectShortName">nextState[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_tb/t/u/newCounter" type="array">
-      <obj_property name="ElementShortName">newCounter[31:0]</obj_property>
-      <obj_property name="ObjectShortName">newCounter[31:0]</obj_property>
+   <wvobject fp_name="/usbVariableBuffer_tb/byteAvail" type="logic">
+      <obj_property name="ElementShortName">byteAvail</obj_property>
+      <obj_property name="ObjectShortName">byteAvail</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_tb/t/u/currentCounter" type="array">
-      <obj_property name="ElementShortName">currentCounter[31:0]</obj_property>
-      <obj_property name="ObjectShortName">currentCounter[31:0]</obj_property>
+   <wvobject fp_name="/usbVariableBuffer_tb/takeByte" type="logic">
+      <obj_property name="ElementShortName">takeByte</obj_property>
+      <obj_property name="ObjectShortName">takeByte</obj_property>
    </wvobject>
 </wave_config>

@@ -83,13 +83,32 @@ mig_wrapper_1 mig (
     .sync_rst(ui_rst)
 );
 
-usb_IF usb();
+wire [7:0] usbByte;
+wire newUsbData;
+
+usb_buff_IF usb();
+usbVariableBuffer u(
+	.clk(ui_clk),
+	.rst(ui_rst),
+	.usbRx(usbByte),
+	.newRx(newUsbData),
+	.byteRx(usb.byteRx),
+	.byteAvail(usb.byteAvail),
+	.takeByte(usb.takeByte),
+	.wordRx(usb.wordRx),
+	.wordAvail(usb.wordAvail),
+	.takeWord(usb.takeWord),
+	.longRx(usb.longRx),
+	.longAvail(usb.longAvail),
+	.takeLong(usb.takeLong)
+);
+
 serialRx #(.CLK_PER_BIT(81)) sr(
 	.clk(ui_clk),
 	.rst(ui_rst),
 	.rx(usb_rx),
-	.data(usb.dataIn),
-	.new_data(usb.newDataIn)
+	.data(usbByte),
+	.new_data(newUsbData)
 );
 serialTx #(.CLK_PER_BIT(81)) st(
 	.clk(ui_clk),
@@ -99,8 +118,9 @@ serialTx #(.CLK_PER_BIT(81)) st(
 	.new_data(usb.newDataOut),
 	.block('b0)
 );
+
 ddr3_IF ddr();
-userland u(
+userland userland(
 	.ddr(ddr),
 	.io(io),
 	.clk(ui_clk),

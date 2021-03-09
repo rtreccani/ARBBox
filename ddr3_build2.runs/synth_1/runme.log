@@ -17,22 +17,23 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 21112
+INFO: [Synth 8-7075] Helper process launched with PID 900
 WARNING: [Synth 8-2507] parameter declaration becomes local in serialRx with formal parameter declaration list [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialRx.sv:12]
 WARNING: [Synth 8-2507] parameter declaration becomes local in serialTx with formal parameter declaration list [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv:14]
+WARNING: [Synth 8-6901] identifier 'currentState' is used before its declaration [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/usbVariableBuffer.sv:36]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1004.004 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1005.766 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:7]
 INFO: [Synth 8-6157] synthesizing module 'io_IF' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:16]
 INFO: [Synth 8-6155] done synthesizing module 'io_IF' (0#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:16]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-19708-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-19708-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-16976-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-16976-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'clk_out3' of module 'clk_wiz_0' is unconnected for instance 'clk_wiz' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:50]
 WARNING: [Synth 8-7023] instance 'clk_wiz' of module 'clk_wiz_0' has 6 connections declared, but only 5 given [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:50]
 INFO: [Synth 8-6157] synthesizing module 'mig_wrapper_1' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v:7]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-19708-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (2#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-19708-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-16976-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (2#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-16976-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'mig_wrapper_1' (3#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v:7]
 INFO: [Synth 8-6157] synthesizing module 'usb_IF' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:27]
 INFO: [Synth 8-6155] done synthesizing module 'usb_IF' (3#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:27]
@@ -65,9 +66,17 @@ WARNING: [Synth 8-330] inout connections inferred for interface port 'ddr3_IF' w
 WARNING: [Synth 8-330] inout connections inferred for interface port 'io_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:105]
 WARNING: [Synth 8-330] inout connections inferred for interface port 'usb_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:108]
 INFO: [Synth 8-6157] synthesizing module 'heartbeat' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/heartbeat.sv:1]
-	Parameter CLKFREQ bound to: 81250000 - type: integer 
+	Parameter CLKFREQ bound to: 100000000 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'heartbeat' (6#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/heartbeat.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'userland' (7#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'usbVariableBuffer' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/usbVariableBuffer.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/usbVariableBuffer.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'usbVariableBuffer' (7#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/usbVariableBuffer.sv:1]
+WARNING: [Synth 8-7071] port 'byteRx' of module 'usbVariableBuffer' is unconnected for instance 'nolabel_line18' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:18]
+WARNING: [Synth 8-7071] port 'wordRx' of module 'usbVariableBuffer' is unconnected for instance 'nolabel_line18' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:18]
+WARNING: [Synth 8-7071] port 'longRx' of module 'usbVariableBuffer' is unconnected for instance 'nolabel_line18' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:18]
+WARNING: [Synth 8-7071] port 'state' of module 'usbVariableBuffer' is unconnected for instance 'nolabel_line18' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:18]
+WARNING: [Synth 8-7023] instance 'nolabel_line18' of module 'usbVariableBuffer' has 15 connections declared, but only 11 given [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'userland' (8#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'lru_cache_2' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v:13]
 	Parameter ENTRIES bound to: 1'b1 
 	Parameter WORD_SIZE bound to: 4'b1000 
@@ -88,21 +97,21 @@ INFO: [Synth 8-6157] synthesizing module 'lru_cache_2' [C:/Users/Raphael/Documen
 	Parameter PUT_write_state bound to: 1'b1 
 	Parameter IDLE_read_state bound to: 1'b0 
 	Parameter FETCH_read_state bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'lru_cache_2' (8#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'top' (9#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'lru_cache_2' (9#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'top' (10#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:7]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1004.004 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1005.766 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1004.004 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1005.766 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1004.004 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1005.766 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 1004.004 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 1005.766 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -125,20 +134,20 @@ Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/
 Finished Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1026.453 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1047.457 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1026.453 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1047.457 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1026.453 ; gain = 22.449
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1047.457 ; gain = 41.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1026.453 ; gain = 22.449
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1047.457 ; gain = 41.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -244,10 +253,11 @@ Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  c:/User
 Applied set_property KEEP_HIERARCHY = SOFT for mig/mig. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1026.453 ; gain = 22.449
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1047.457 ; gain = 41.691
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'serialRx'
 INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'serialTx'
+INFO: [Synth 8-802] inferred FSM for state register 'currentState_reg' in module 'usbVariableBuffer'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -266,8 +276,18 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encodin
                 STOP_BIT |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'sequential' in module 'serialTx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 | 00000000000000000000000000000000
+                     ONE |                              001 | 00000000000000000000000000000001
+                     TWO |                              010 | 00000000000000000000000000000010
+                   THREE |                              011 | 00000000000000000000000000000011
+                    FOUR |                              100 | 00000000000000000000000000000100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'currentState_reg' using encoding 'sequential' in module 'usbVariableBuffer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1026.453 ; gain = 22.449
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1047.457 ; gain = 41.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -283,34 +303,32 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 1     
 	               28 Bit    Registers := 3     
 	               25 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 11    
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 9     
 	                7 Bit    Registers := 2     
 	                3 Bit    Registers := 4     
-	                1 Bit    Registers := 35    
+	                1 Bit    Registers := 34    
 +---Muxes : 
 	   4 Input  177 Bit        Muxes := 1     
 	   2 Input  128 Bit        Muxes := 39    
 	   8 Input  128 Bit        Muxes := 2     
 	   2 Input   33 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 1     
 	   8 Input   25 Bit        Muxes := 1     
 	   2 Input   24 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 18    
 	   4 Input   16 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 7     
+	   5 Input    8 Bit        Muxes := 5     
 	   4 Input    7 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 1     
-	   7 Input    5 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 1     
-	   3 Input    4 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 5     
-	   7 Input    3 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 13    
 	   4 Input    2 Bit        Muxes := 2     
 	   8 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 75    
+	   2 Input    1 Bit        Muxes := 96    
 	   4 Input    1 Bit        Muxes := 11    
-	   7 Input    1 Bit        Muxes := 9     
+	   5 Input    1 Bit        Muxes := 15    
 	   8 Input    1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -328,57 +346,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1026.453 ; gain = 22.449
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1047.457 ; gain = 41.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1026.453 ; gain = 22.449
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1047.457 ; gain = 41.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1049.832 ; gain = 45.828
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1047.457 ; gain = 41.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[31] ) from module (top) as it is equivalent to (\u/currentState_reg[31]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[30] ) from module (top) as it is equivalent to (\u/currentState_reg[30]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[29] ) from module (top) as it is equivalent to (\u/currentState_reg[29]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[28] ) from module (top) as it is equivalent to (\u/currentState_reg[28]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[27] ) from module (top) as it is equivalent to (\u/currentState_reg[27]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[26] ) from module (top) as it is equivalent to (\u/currentState_reg[26]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[25] ) from module (top) as it is equivalent to (\u/currentState_reg[25]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[24] ) from module (top) as it is equivalent to (\u/currentState_reg[24]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[23] ) from module (top) as it is equivalent to (\u/currentState_reg[23]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[22] ) from module (top) as it is equivalent to (\u/currentState_reg[22]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[21] ) from module (top) as it is equivalent to (\u/currentState_reg[21]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[20] ) from module (top) as it is equivalent to (\u/currentState_reg[20]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[19] ) from module (top) as it is equivalent to (\u/currentState_reg[19]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[18] ) from module (top) as it is equivalent to (\u/currentState_reg[18]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[17] ) from module (top) as it is equivalent to (\u/currentState_reg[17]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[16] ) from module (top) as it is equivalent to (\u/currentState_reg[16]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[15] ) from module (top) as it is equivalent to (\u/currentState_reg[15]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[14] ) from module (top) as it is equivalent to (\u/currentState_reg[14]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[13] ) from module (top) as it is equivalent to (\u/currentState_reg[13]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[12] ) from module (top) as it is equivalent to (\u/currentState_reg[12]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[11] ) from module (top) as it is equivalent to (\u/currentState_reg[11]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[10] ) from module (top) as it is equivalent to (\u/currentState_reg[10]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[9] ) from module (top) as it is equivalent to (\u/currentState_reg[9]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[8] ) from module (top) as it is equivalent to (\u/currentState_reg[8]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[7] ) from module (top) as it is equivalent to (\u/currentState_reg[7]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[6] ) from module (top) as it is equivalent to (\u/currentState_reg[6]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[5] ) from module (top) as it is equivalent to (\u/currentState_reg[5]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[4] ) from module (top) as it is equivalent to (\u/currentState_reg[4]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[3] ) from module (top) as it is equivalent to (\u/currentState_reg[3]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[2] ) from module (top) as it is equivalent to (\u/currentState_reg[2]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[1] ) from module (top) as it is equivalent to (\u/currentState_reg[1]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[0] ) from module (top) as it is equivalent to (\u/currentState_reg[0]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:63]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1049.141 ; gain = 43.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -396,37 +382,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1049.141 ; gain = 43.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1049.141 ; gain = 43.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1049.141 ; gain = 43.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1049.141 ; gain = 43.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1049.141 ; gain = 43.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1049.141 ; gain = 43.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -446,40 +432,36 @@ Report Cell Usage:
 +------+------------+------+
 |1     |clk_wiz     |     1|
 |2     |mig_7series |     1|
-|3     |CARRY4      |    13|
-|4     |LUT1        |    20|
-|5     |LUT2        |    15|
-|6     |LUT3        |    63|
-|7     |LUT4        |    34|
-|8     |LUT5        |    80|
-|9     |LUT6        |   319|
-|10    |MUXF7       |     8|
-|11    |FDRE        |   338|
-|12    |FDSE        |     1|
-|13    |IBUF        |     2|
-|14    |OBUF        |    31|
-|15    |OBUFT       |    14|
+|3     |LUT1        |     3|
+|4     |LUT2        |     5|
+|5     |LUT3        |     2|
+|6     |LUT4        |     7|
+|7     |LUT5        |     6|
+|8     |LUT6        |     5|
+|9     |FDRE        |    17|
+|10    |FDSE        |     1|
+|11    |IBUF        |     1|
+|12    |OBUF        |    36|
+|13    |OBUFT       |     9|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1049.141 ; gain = 43.375
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1067.949 ; gain = 41.496
-Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1067.949 ; gain = 63.945
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 1049.141 ; gain = 1.684
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1049.141 ; gain = 43.375
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1070.727 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1057.027 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1070.727 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1057.027 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-78 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+49 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1070.727 ; gain = 66.723
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1057.027 ; gain = 51.262
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar  8 14:35:38 2021...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  9 12:48:17 2021...
