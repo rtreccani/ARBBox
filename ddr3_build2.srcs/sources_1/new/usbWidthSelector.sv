@@ -25,6 +25,7 @@ always @(posedge clk) begin
 	newWordOut <= 'b0;
 	if(rst) begin
 		avail <= 'b0;
+		newWordOut <= 'b0;
 	end else begin
 		if(newByteIn) begin
 			if (avail == byteWidth - 1) begin

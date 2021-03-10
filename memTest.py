@@ -12,15 +12,14 @@ def handler(signum, frame):
 signal.signal(signal.SIGINT, handler)
 
 def writeToRam(addr,val):
-    if(addr>255 or val >255):
+    if(addr>268435455 or val >255):
         print("invalid value in address or val for write")
         ser.close()
         exit()
 
-    packet =[87, addr, val]
-    bytePacket = bytes(packet)
-    bytesSent = ser.write(bytePacket)
-    if(bytesSent != 3):
+    packet =int(87).to_bytes(1, 'little') + addr.to_bytes(4, 'little') + val.to_bytes(1,'little')
+    bytesSent = ser.write(packet)
+    if(bytesSent != 6):
         print("full packet not sent on write")
         ser.close()
         exit()
@@ -29,15 +28,14 @@ def writeToRam(addr,val):
 
 
 def readFromRam(addr,val):
-    if(addr>255 or val >255):
+    if(addr>268435455 or val >255):
         print("invalid value in address or val for read")
         ser.close()
         exit()
     
-    packet = [82, addr]
-    bytesPacket = bytes(packet)
-    bytesSent = ser.write(bytesPacket)
-    if(bytesSent != 2):
+    packet =int(82).to_bytes(1, 'little') + addr.to_bytes(4, 'little')
+    bytesSent = ser.write(packet)
+    if(bytesSent != 5):
         print("full packet not sent on read")
         ser.close()
         exit()
@@ -49,24 +47,43 @@ def readFromRam(addr,val):
         exit()
     return
 
+def burstWrite(addr, data):
+    dataLen = len(data)-1
+    if(addr + dataLen >= 268435455):
+        print('trying to write to more RAM than exists')
+    ser.write(int(66).to_bytes(1, 'big'))
+    preamble = addr.to_bytes(4, 'big')
+    ser.write(preamble)
+    preamble = dataLen.to_bytes(4, 'big')
+    ser.write(preamble)
+    ser.write(bytes(data))
+    return
+
+
+SAMPLES = 1000
 
 testSeq = []
-for i in range(0,255):
+for i in range(0,SAMPLES):
     testSeq.append(0)
 
 
 while True:
-    for i in range(0,255):
+    tic = time.time()
+    for i in range(0,SAMPLES):
         testSeq[i] = random.randint(0,255)
     #print(testSeq)
 
-    for addr,val in enumerate(testSeq):
-        writeToRam(addr,val)
+    # for addr,val in enumerate(testSeq):
+    #     writeToRam(addr,val)
+    print('burst write')
+    burstWrite(0, testSeq)
 
+    time.sleep(5)
+    print('atomic read')
     for addr,val in enumerate(testSeq):
         readFromRam(addr, val)
 
-    print('successfully wrote and read back 256 bytes')
-
-
+    toc = time.time() - tic
+    print('successfully wrote and read back ', SAMPLES, ' bytes in ', toc, " seconds, data rate ", SAMPLES/toc, "B/s")
+    time.sleep(10)
 

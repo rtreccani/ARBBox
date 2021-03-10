@@ -15,11 +15,13 @@ heartbeat #(.CLKFREQ(81250000)) h(
 
 typedef enum {
 	IDLE,
-	ONEIN,
-	TWOIN,
+	ADDR_SET,
+	DATA_SET,
 	WRITE,
 	READ,
-	READ_DELAY
+	READ_DELAY,
+	BURSTW_LENSET,
+	BURSTW
 } state_t;
 
 (* fsm_encoding = "one_hot" *) state_t currentState;
@@ -29,36 +31,41 @@ state_t nextState;
 always @(posedge clk) begin
 	currentState <= nextState;
 	case (currentState)
-		IDLE : io.sys_led[2:0] =       'b001;
-		ONEIN : io.sys_led[2:0] =      'b010;
-		TWOIN : io.sys_led[2:0] =      'b011;
-		WRITE : io.sys_led[2:0] =      'b100;
-		READ : io.sys_led[2:0] =       'b101;
-		READ_DELAY : io.sys_led[2:0] = 'b110;
-		default : io.sys_led[2:0] =    'b111;
+		IDLE :          io.sys_led[3:0] = 'b0001;
+		ADDR_SET :         io.sys_led[3:0] = 'b0010;
+		DATA_SET :         io.sys_led[3:0] = 'b0011;
+		WRITE :         io.sys_led[3:0] = 'b0100;
+		READ :          io.sys_led[3:0] = 'b0101;
+		READ_DELAY :    io.sys_led[3:0] = 'b0110;
+		BURSTW_LENSET : io.sys_led[3:0] = 'b0111;
+		BURSTW :        io.sys_led[3:0] = 'b1000;
+		default :       io.sys_led[2:0] = 'b1111;
 	endcase
 end
 
 reg [7:0] cmd;
 reg [31:0] addr;
 reg [7:0] data;
+reg [31:0] burstPtr;
+reg [31:0] burstLen;
 
 reg [2:0] dataW;
+
 assign usb.dataWidth = dataW;
 
-assign io.sys_led[3] = ddr.wr_ready;
-assign io.sys_led[4] = ddr.rd_ready;
 
 initial begin 
 	currentState <= IDLE;
 	nextState <= IDLE;
 end
 
+assign io.led[17:0] = burstLen[17:0];
 
 
 always @(posedge clk) begin
 
-	//sensible defaults 
+	//sensible defaults
+	dataW <= 'b001; 
 	ddr.wr_valid <= 'b0;
 	ddr.flush <= 'b0;
 	ddr.rd_cmd_valid <= 'b0;
@@ -72,24 +79,24 @@ always @(posedge clk) begin
 			if(usb.newDataIn) begin
 				dataW <= 'b100;
 				cmd <= usb.dataIn[7:0];
-				nextState <= ONEIN;
+				nextState <= ADDR_SET;
 			end
 		end
 		
-		ONEIN : begin
+		ADDR_SET : begin
 			dataW <= 'b100;
 			if(usb.newDataIn) begin
 				addr <= usb.dataIn[31:0];
-				dataW <= 'b001;
 				case(cmd)
 					'h52    : nextState <= READ;
-					'h57    : nextState <= TWOIN;
+					'h57    : nextState <= DATA_SET;
+					'h42	: nextState <= BURSTW_LENSET;
 					default : nextState <= IDLE;
 				endcase
 			end
 		end
 		
-		TWOIN : begin
+		DATA_SET : begin
 			dataW <= 'b001;
 			if(usb.newDataIn) begin
 				data <= usb.dataIn[7:0];
@@ -99,6 +106,7 @@ always @(posedge clk) begin
 		end
 		
 		WRITE : begin
+			dataW <= 'b001;
 			if(ddr.wr_ready) begin
 				ddr.wr_addr <= addr[27:0];
 				ddr.wr_data <= data;
@@ -108,6 +116,7 @@ always @(posedge clk) begin
 		end
 		
 		READ : begin
+			dataW <= 'b001;
 			if(ddr.rd_ready) begin
 				ddr.rd_addr <= addr[27:0];
 				ddr.rd_cmd_valid <= 'b1;
@@ -116,6 +125,7 @@ always @(posedge clk) begin
 		end
 		
 		READ_DELAY : begin
+			dataW <= 'b001;
 			if(ddr.rd_data_valid) begin
 				usb.dataOut <= ddr.rd_data;
 				usb.newDataOut <= 'b1;
@@ -123,6 +133,30 @@ always @(posedge clk) begin
 			end
 		end
 		default : nextState <= IDLE;
+		
+		BURSTW_LENSET : begin
+			dataW <= 'b100;
+			if(usb.newDataIn) begin
+				burstPtr <= addr;
+				burstLen <= usb.dataIn[27:0];
+				nextState <= BURSTW;
+			end
+		end
+		
+		BURSTW : begin
+			dataW <= 'b001;
+			if(usb.newDataIn) begin
+				ddr.wr_addr <= burstPtr;
+				ddr.wr_data <= usb.dataIn;
+				ddr.wr_valid <= 'b1;
+				if(burstLen == 'd0) begin //off by one error
+					nextState <= IDLE;
+				end else begin
+					burstLen--;
+				end
+			end
+		end
+		
 	endcase	
 	if(rst) begin
 		nextState <= IDLE;
