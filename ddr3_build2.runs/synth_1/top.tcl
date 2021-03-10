@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -98,6 +99,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialRx.sv
   C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv
   C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/heartbeat.sv
+  C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/usbWidthSelector.sv
 }
 set_property is_global_include true [get_files C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv]
 read_ip -quiet C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci

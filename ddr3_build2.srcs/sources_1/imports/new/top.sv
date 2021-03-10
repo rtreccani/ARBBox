@@ -84,13 +84,30 @@ mig_wrapper_1 mig (
 );
 
 usb_IF usb();
+wire [7:0] usbByte;
+wire usbNewByte;
+
 serialRx #(.CLK_PER_BIT(81)) sr(
 	.clk(ui_clk),
 	.rst(ui_rst),
 	.rx(usb_rx),
-	.data(usb.dataIn),
-	.new_data(usb.newDataIn)
+	.data(usbByte),
+	.new_data(usbNewByte)
 );
+
+usbWidthSelector wsl( //copyright bruh moment
+	.clk(ui_clk),
+	.rst(rst),
+	.byteWidth(usb.dataWidth),
+	.byteIn(usbByte),
+	.newByteIn(usbNewByte),
+	.wordOut(usb.dataIn),
+	.newWordOut(usb.newDataIn),
+	.available(io_led[23:21])
+);
+
+assign io_led[20:18] = usb.dataWidth;
+
 serialTx #(.CLK_PER_BIT(81)) st(
 	.clk(ui_clk),
 	.rst(ui_rst),

@@ -25,8 +25,9 @@ endinterface : ddr3_IF
  endinterface : io_IF
  
  interface usb_IF;
- 	logic [7:0] dataIn;
+ 	logic [31:0] dataIn;
  	logic newDataIn;
+ 	logic [2:0] dataWidth;
  	logic block;
  	logic busyOut;
  	logic [7:0] dataOut;
