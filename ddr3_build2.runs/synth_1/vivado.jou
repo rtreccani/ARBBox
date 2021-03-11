@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Mar 10 19:04:50 2021
-# Process ID: 4568
+# Start of session at: Thu Mar 11 14:21:29 2021
+# Process ID: 18504
 # Current directory: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/top.vds

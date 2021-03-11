@@ -4,7 +4,7 @@ import signal
 import time
 
 ser = serial.Serial('COM15', 1000000)
-
+ser.flush()
 
 def handler(signum, frame):
     ser.close()
@@ -60,7 +60,19 @@ def burstWrite(addr, data):
     return
 
 
-SAMPLES = 1000
+def burstRead(addr, len):
+    ser.write((80).to_bytes(1, 'big'))
+    preamble = addr.to_bytes(4, 'big')
+    ser.write(preamble)
+    preamble = len.to_bytes(4, 'big')
+    ser.write(preamble)
+    while(ser.in_waiting < len):
+        pass
+    return(ser.read(len))
+
+
+
+SAMPLES = 4000
 
 testSeq = []
 for i in range(0,SAMPLES):
@@ -75,15 +87,16 @@ while True:
 
     # for addr,val in enumerate(testSeq):
     #     writeToRam(addr,val)
-    print('burst write')
     burstWrite(0, testSeq)
-
-    time.sleep(5)
-    print('atomic read')
-    for addr,val in enumerate(testSeq):
-        readFromRam(addr, val)
+    a = burstRead(0, SAMPLES)
+    if(a != bytes(testSeq)):
+        print("two sequences not equal")
+        ser.close()
+        exit()
+    # print('atomic read')
+    # for addr,val in enumerate(testSeq):
+    #     readFromRam(addr, val)
 
     toc = time.time() - tic
     print('successfully wrote and read back ', SAMPLES, ' bytes in ', toc, " seconds, data rate ", SAMPLES/toc, "B/s")
-    time.sleep(10)
 

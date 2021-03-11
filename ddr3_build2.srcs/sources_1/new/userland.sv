@@ -21,7 +21,10 @@ typedef enum {
 	READ,
 	READ_DELAY,
 	BURSTW_LENSET,
-	BURSTW
+	BURSTW,
+	BURSTR_LENSET,
+	BURSTR,
+	BURSTR_DELAY
 } state_t;
 
 (* fsm_encoding = "one_hot" *) state_t currentState;
@@ -32,14 +35,17 @@ always @(posedge clk) begin
 	currentState <= nextState;
 	case (currentState)
 		IDLE :          io.sys_led[3:0] = 'b0001;
-		ADDR_SET :         io.sys_led[3:0] = 'b0010;
-		DATA_SET :         io.sys_led[3:0] = 'b0011;
+		ADDR_SET :      io.sys_led[3:0] = 'b0010;
+		DATA_SET :      io.sys_led[3:0] = 'b0011;
 		WRITE :         io.sys_led[3:0] = 'b0100;
 		READ :          io.sys_led[3:0] = 'b0101;
 		READ_DELAY :    io.sys_led[3:0] = 'b0110;
 		BURSTW_LENSET : io.sys_led[3:0] = 'b0111;
 		BURSTW :        io.sys_led[3:0] = 'b1000;
-		default :       io.sys_led[2:0] = 'b1111;
+		BURSTR_LENSET : io.sys_led[3:0] = 'b1001;
+		BURSTR : 	    io.sys_led[3:0] = 'b1010;
+		BURSTR_DELAY :  io.sys_led[3:0] = 'b1011;
+		default :       io.sys_led[3:0] = 'b1111;
 	endcase
 end
 
@@ -51,6 +57,9 @@ reg [31:0] burstLen;
 
 reg [2:0] dataW;
 
+reg [7:0] burstReadCache;
+reg burstReadCacheDirty;
+
 assign usb.dataWidth = dataW;
 
 
@@ -59,8 +68,8 @@ initial begin
 	nextState <= IDLE;
 end
 
-assign io.led[17:0] = burstLen[17:0];
-
+assign io.led[15:8] = burstLen[7:0];
+assign io.led[7:0] = cmd;
 
 always @(posedge clk) begin
 
@@ -77,7 +86,6 @@ always @(posedge clk) begin
 		IDLE : begin
 			dataW <= 'b001;
 			if(usb.newDataIn) begin
-				dataW <= 'b100;
 				cmd <= usb.dataIn[7:0];
 				nextState <= ADDR_SET;
 			end
@@ -91,6 +99,7 @@ always @(posedge clk) begin
 					'h52    : nextState <= READ;
 					'h57    : nextState <= DATA_SET;
 					'h42	: nextState <= BURSTW_LENSET;
+					'h50    : nextState <= BURSTR_LENSET;
 					default : nextState <= IDLE;
 				endcase
 			end
@@ -101,7 +110,6 @@ always @(posedge clk) begin
 			if(usb.newDataIn) begin
 				data <= usb.dataIn[7:0];
 				nextState <= WRITE;
-				dataW <= 'b001;
 			end
 		end
 		
@@ -132,7 +140,7 @@ always @(posedge clk) begin
 				nextState <= IDLE;
 			end
 		end
-		default : nextState <= IDLE;
+		
 		
 		BURSTW_LENSET : begin
 			dataW <= 'b100;
@@ -153,10 +161,50 @@ always @(posedge clk) begin
 					nextState <= IDLE;
 				end else begin
 					burstLen--;
+					burstPtr++;
 				end
 			end
 		end
 		
+		BURSTR_LENSET : begin
+			dataW <= 'b100;
+			if(usb.newDataIn) begin
+				burstPtr <= addr;
+				burstLen <= usb.dataIn[27:0];
+				nextState <= BURSTR;
+			end
+		end
+		
+		BURSTR : begin
+			dataW <= 'b001;
+			//handle new data from DDR
+			if(ddr.rd_data_valid) begin
+				burstReadCache <= ddr.rd_data;
+				burstReadCacheDirty <= 'b0;
+			end
+			
+			//handle USB
+			if(usb.busyOut & ~burstReadCacheDirty) begin	
+				//nothing
+			end else if(usb.busyOut & burstReadCacheDirty) begin
+				ddr.rd_addr <= burstPtr;
+				ddr.rd_cmd_valid <= 'b1;
+			end else if(~usb.busyOut & ~burstReadCacheDirty) begin
+				usb.dataOut <= burstReadCache;
+				usb.newDataOut <= 'b1;
+				burstReadCacheDirty <= 'b1;
+				burstPtr++;
+				burstLen--;
+			end else if(~usb.busyOut & burstReadCacheDirty) begin
+				ddr.rd_addr <= burstPtr;
+				ddr.rd_cmd_valid <= 'b1;
+			end
+			
+			//handle next state
+			if(burstLen == 'd0) begin
+				nextState <= IDLE;
+			end
+		end	
 	endcase	
 	if(rst) begin
 		nextState <= IDLE;

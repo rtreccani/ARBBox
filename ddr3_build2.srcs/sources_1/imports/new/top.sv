@@ -97,7 +97,7 @@ serialRx #(.CLK_PER_BIT(81)) sr(
 
 usbWidthSelector wsl( //copyright bruh moment
 	.clk(ui_clk),
-	.rst(rst),
+	.rst(ui_rst),
 	.byteWidth(usb.dataWidth),
 	.byteIn(usbByte),
 	.newByteIn(usbNewByte),
@@ -114,6 +114,7 @@ serialTx #(.CLK_PER_BIT(81)) st(
 	.tx(usb_tx),
 	.data(usb.dataOut),
 	.new_data(usb.newDataOut),
+	.busy(usb.busyOut),
 	.block('b0)
 );
 ddr3_IF ddr();

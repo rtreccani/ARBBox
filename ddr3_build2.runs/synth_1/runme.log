@@ -17,20 +17,20 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6068
+INFO: [Synth 8-7075] Helper process launched with PID 15604
 WARNING: [Synth 8-2507] parameter declaration becomes local in serialRx with formal parameter declaration list [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialRx.sv:12]
 WARNING: [Synth 8-2507] parameter declaration becomes local in serialTx with formal parameter declaration list [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv:14]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1002.977 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1002.324 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:7]
 INFO: [Synth 8-6157] synthesizing module 'io_IF' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:16]
 INFO: [Synth 8-6155] done synthesizing module 'io_IF' (0#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:16]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-23224-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-23224-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-18504-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-18504-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'mig_wrapper_1' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v:7]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-23224-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (2#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-23224-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-18504-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (2#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-18504-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'mig_wrapper_1' (3#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v:7]
 INFO: [Synth 8-6157] synthesizing module 'usb_IF' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:27]
 INFO: [Synth 8-6155] done synthesizing module 'usb_IF' (3#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:27]
@@ -56,17 +56,16 @@ INFO: [Synth 8-6157] synthesizing module 'serialTx' [C:/Users/Raphael/Documents/
 	Parameter STOP_BIT bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv:41]
 INFO: [Synth 8-6155] done synthesizing module 'serialTx' (6#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv:1]
-WARNING: [Synth 8-7071] port 'busy' of module 'serialTx' is unconnected for instance 'st' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:111]
-WARNING: [Synth 8-7023] instance 'st' of module 'serialTx' has 7 connections declared, but only 6 given [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:111]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_IF' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:1]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_IF' (6#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'userland' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:1]
-WARNING: [Synth 8-330] inout connections inferred for interface port 'ddr3_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:121]
-WARNING: [Synth 8-330] inout connections inferred for interface port 'io_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:122]
-WARNING: [Synth 8-330] inout connections inferred for interface port 'usb_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:125]
+WARNING: [Synth 8-330] inout connections inferred for interface port 'ddr3_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:122]
+WARNING: [Synth 8-330] inout connections inferred for interface port 'io_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:123]
+WARNING: [Synth 8-330] inout connections inferred for interface port 'usb_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:126]
 INFO: [Synth 8-6157] synthesizing module 'heartbeat' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/heartbeat.sv:1]
 	Parameter CLKFREQ bound to: 81250000 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'heartbeat' (7#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/heartbeat.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:85]
 INFO: [Synth 8-6155] done synthesizing module 'userland' (8#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'lru_cache_2' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v:13]
 	Parameter ENTRIES bound to: 1'b1 
@@ -91,18 +90,18 @@ INFO: [Synth 8-6157] synthesizing module 'lru_cache_2' [C:/Users/Raphael/Documen
 INFO: [Synth 8-6155] done synthesizing module 'lru_cache_2' (9#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'top' (10#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:7]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.977 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.324 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1002.977 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1002.324 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1002.977 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1002.324 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.099 . Memory (MB): peak = 1002.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.101 . Memory (MB): peak = 1002.324 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -125,20 +124,20 @@ Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/
 Finished Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1025.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1029.000 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1025.684 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1029.000 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1025.684 ; gain = 22.707
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1029.000 ; gain = 26.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1025.684 ; gain = 22.707
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1029.000 ; gain = 26.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -244,7 +243,7 @@ Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  c:/User
 Applied set_property KEEP_HIERARCHY = SOFT for mig/mig. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1025.684 ; gain = 22.707
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1029.000 ; gain = 26.676
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'serialRx'
 INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'serialTx'
@@ -267,7 +266,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encodin
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'sequential' in module 'serialTx'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1025.684 ; gain = 22.707
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1029.000 ; gain = 26.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -275,48 +274,49 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   33 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 3     
 	   2 Input    7 Bit       Adders := 2     
 	   2 Input    3 Bit       Adders := 3     
 +---Registers : 
 	              128 Bit    Registers := 1     
 	               33 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	               28 Bit    Registers := 7     
+	               32 Bit    Registers := 6     
+	               28 Bit    Registers := 5     
 	               25 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 8     
+	                8 Bit    Registers := 9     
 	                7 Bit    Registers := 2     
 	                3 Bit    Registers := 6     
-	                1 Bit    Registers := 36    
+	                1 Bit    Registers := 37    
 +---Muxes : 
 	   4 Input  177 Bit        Muxes := 1     
 	   2 Input  128 Bit        Muxes := 39    
 	   8 Input  128 Bit        Muxes := 2     
 	   2 Input   33 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 2     
-	   8 Input   32 Bit        Muxes := 1     
-	   2 Input   28 Bit        Muxes := 1     
-	   8 Input   28 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 9     
+	  11 Input   32 Bit        Muxes := 3     
+	   2 Input   28 Bit        Muxes := 2     
+	  11 Input   28 Bit        Muxes := 2     
 	   8 Input   25 Bit        Muxes := 1     
 	   2 Input   24 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 18    
 	   4 Input   16 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 4     
-	   8 Input    8 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 3     
+	  11 Input    8 Bit        Muxes := 2     
 	   4 Input    7 Bit        Muxes := 2     
 	   2 Input    5 Bit        Muxes := 1     
-	   8 Input    5 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 1     
-	   4 Input    4 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 6     
-	   8 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 5     
+	  11 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 2     
 	   8 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 81    
+	   2 Input    1 Bit        Muxes := 88    
 	   4 Input    1 Bit        Muxes := 11    
-	   8 Input    1 Bit        Muxes := 22    
+	  11 Input    1 Bit        Muxes := 14    
+	  12 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -333,394 +333,57 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1025.684 ; gain = 22.707
----------------------------------------------------------------------------------
-
-*** Running vivado
-    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-
-
-
-****** Vivado v2020.2 (64-bit)
-  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-
-source top.tcl -notrace
-Command: synth_design -top top -part xc7a35tftg256-1
-Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Device 21-403] Loading part xc7a35tftg256-1
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
-INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 23880
-WARNING: [Synth 8-2507] parameter declaration becomes local in serialRx with formal parameter declaration list [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialRx.sv:12]
-WARNING: [Synth 8-2507] parameter declaration becomes local in serialTx with formal parameter declaration list [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv:14]
----------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1005.363 ; gain = 0.000
----------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:7]
-INFO: [Synth 8-6157] synthesizing module 'io_IF' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:16]
-INFO: [Synth 8-6155] done synthesizing module 'io_IF' (0#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:16]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-4568-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-4568-DESKTOP-K56E9LU/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mig_wrapper_1' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v:7]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-4568-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (2#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/.Xil/Vivado-4568-DESKTOP-K56E9LU/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_wrapper_1' (3#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/mig_wrapper_1.v:7]
-INFO: [Synth 8-6157] synthesizing module 'usb_IF' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:27]
-INFO: [Synth 8-6155] done synthesizing module 'usb_IF' (3#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:27]
-INFO: [Synth 8-6157] synthesizing module 'serialRx' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialRx.sv:1]
-	Parameter CLK_PER_BIT bound to: 81 - type: integer 
-	Parameter CTR_SIZE bound to: 7 - type: integer 
-	Parameter STATE_SIZE bound to: 2 - type: integer 
-	Parameter IDLE bound to: 2'b00 
-	Parameter WAIT_HALF bound to: 2'b01 
-	Parameter WAIT_FULL bound to: 2'b10 
-	Parameter WAIT_HIGH bound to: 2'b11 
-INFO: [Synth 8-226] default block is never used [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialRx.sv:38]
-INFO: [Synth 8-6155] done synthesizing module 'serialRx' (4#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialRx.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'usbWidthSelector' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/usbWidthSelector.sv:4]
-INFO: [Synth 8-6155] done synthesizing module 'usbWidthSelector' (5#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/usbWidthSelector.sv:4]
-INFO: [Synth 8-6157] synthesizing module 'serialTx' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv:1]
-	Parameter CLK_PER_BIT bound to: 81 - type: integer 
-	Parameter CTR_SIZE bound to: 7 - type: integer 
-	Parameter STATE_SIZE bound to: 2 - type: integer 
-	Parameter IDLE bound to: 2'b00 
-	Parameter START_BIT bound to: 2'b01 
-	Parameter DATA bound to: 2'b10 
-	Parameter STOP_BIT bound to: 2'b11 
-INFO: [Synth 8-226] default block is never used [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv:41]
-INFO: [Synth 8-6155] done synthesizing module 'serialTx' (6#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/serialTx.sv:1]
-WARNING: [Synth 8-7071] port 'busy' of module 'serialTx' is unconnected for instance 'st' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:111]
-WARNING: [Synth 8-7023] instance 'st' of module 'serialTx' has 7 connections declared, but only 6 given [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:111]
-INFO: [Synth 8-6157] synthesizing module 'ddr3_IF' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_IF' (6#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/interfaces.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'userland' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:1]
-WARNING: [Synth 8-330] inout connections inferred for interface port 'ddr3_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:121]
-WARNING: [Synth 8-330] inout connections inferred for interface port 'io_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:122]
-WARNING: [Synth 8-330] inout connections inferred for interface port 'usb_IF' with no modport [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:125]
-INFO: [Synth 8-6157] synthesizing module 'heartbeat' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/heartbeat.sv:1]
-	Parameter CLKFREQ bound to: 81250000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'heartbeat' (7#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/heartbeat.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'userland' (8#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'lru_cache_2' [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v:13]
-	Parameter ENTRIES bound to: 1'b1 
-	Parameter WORD_SIZE bound to: 4'b1000 
-	Parameter AGE_BITS bound to: 1'b1 
-	Parameter WORDS_PER_LINE bound to: 8'b00010000 
-	Parameter BYTES_PER_WORD bound to: 4'b0001 
-	Parameter SUB_ADDR_BITS bound to: 3'b100 
-	Parameter ADDR_SIZE bound to: 6'b011100 
-	Parameter IDLE_state bound to: 3'b000 
-	Parameter PREP_WRITE_ENTRY_state bound to: 3'b001 
-	Parameter PREP_READ_ENTRY_state bound to: 3'b010 
-	Parameter FLUSH_state bound to: 3'b011 
-	Parameter WRITE_DATA_state bound to: 3'b100 
-	Parameter WRITE_CMD_state bound to: 3'b101 
-	Parameter READ_CMD_state bound to: 3'b110 
-	Parameter WAIT_READ_state bound to: 3'b111 
-	Parameter IDLE_write_state bound to: 1'b0 
-	Parameter PUT_write_state bound to: 1'b1 
-	Parameter IDLE_read_state bound to: 1'b0 
-	Parameter FETCH_read_state bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'lru_cache_2' (9#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/ddr3_build2/work/vivado/ddr3_build2/ddr3_build2.srcs/sources_1/imports/verilog/lru_cache_2.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'top' (10#1) [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/imports/new/top.sv:7]
----------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1005.363 ; gain = 0.000
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1005.363 ; gain = 0.000
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1005.363 ; gain = 0.000
----------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.117 . Memory (MB): peak = 1005.363 ; gain = 0.000
-INFO: [Project 1-570] Preparing netlist for logic optimization
-
-Processing XDC Constraints
-Initializing timing engine
-Parsing XDC File [c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mig/mig'
-Finished Parsing XDC File [c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mig/mig'
-Parsing XDC File [c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz'
-Finished Parsing XDC File [c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz'
-Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/alchitry.xdc]
-Finished Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/alchitry.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/io.xdc]
-Finished Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/io.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/Users/Raphael/Documents/alchitry/ddr3_build2/work/constraint/io.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/components/au.xdc]
-Finished Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/constrs_1/imports/components/au.xdc]
-Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/dont_touch.xdc]
-Completed Processing XDC Constraints
-
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1030.043 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1030.043 ; gain = 0.000
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1030.043 ; gain = 24.680
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Loading Part and Timing Information
----------------------------------------------------------------------------------
-Loading part: xc7a35tftg256-1
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1030.043 ; gain = 24.680
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Applying 'set_property' XDC Constraints
----------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 2).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 3).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[10]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 4).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[10]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 5).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[11]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 6).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[11]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 7).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[12]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 8).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[12]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 9).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[13]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 10).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[13]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 11).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 12).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 13).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[2]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 14).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[2]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 15).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[3]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 16).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[3]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 17).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[4]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 18).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[4]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 19).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[5]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 20).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[5]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 21).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[6]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 22).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[6]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 23).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[7]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 24).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[7]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 25).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[8]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 26).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[8]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 27).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[9]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 28).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[9]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 29).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ba[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 30).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ba[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 31).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ba[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 32).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ba[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 33).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ba[2]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 34).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ba[2]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 35).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cas_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 36).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cas_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 37).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 38).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ck_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 39).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_p. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 40).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ck_p. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 41).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cke. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 42).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cke. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 43).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cs_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 44).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cs_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 45).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dm[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 46).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dm[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 47).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dm[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 48).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dm[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 49).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 50).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 51).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[10]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 52).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[10]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 53).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[11]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 54).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[11]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 55).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[12]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 56).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[12]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 57).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[13]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 58).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[13]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 59).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[14]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 60).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[14]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 61).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[15]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 62).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[15]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 63).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 64).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 65).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[2]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 66).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[2]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 67).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[3]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 68).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[3]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 69).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[4]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 70).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[4]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 71).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[5]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 72).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[5]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 73).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[6]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 74).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[6]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 75).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[7]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 76).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[7]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 77).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[8]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 78).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[8]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 79).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[9]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 80).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[9]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 81).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dqs_n[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 82).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dqs_n[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 83).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dqs_n[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 84).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dqs_n[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 85).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dqs_p[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 86).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dqs_p[0]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 87).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dqs_p[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 88).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dqs_p[1]. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 89).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_odt. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 90).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_odt. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 91).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ras_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 92).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ras_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 93).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_reset_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 94).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_reset_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 95).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_we_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 96).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_we_n. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 97).
-Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  c:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
-Applied set_property KEEP_HIERARCHY = SOFT for mig/mig. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz. (constraint file  auto generated constraint).
----------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1030.043 ; gain = 24.680
----------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'serialRx'
-INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'serialTx'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    IDLE |                               00 |                               00
-               WAIT_HALF |                               01 |                               01
-               WAIT_FULL |                               10 |                               10
-               WAIT_HIGH |                               11 |                               11
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'sequential' in module 'serialRx'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    IDLE |                               00 |                               00
-               START_BIT |                               01 |                               01
-                    DATA |                               10 |                               10
-                STOP_BIT |                               11 |                               11
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'sequential' in module 'serialTx'
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1030.043 ; gain = 24.680
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RTL Component Statistics 
----------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input   33 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 2     
-	   2 Input    7 Bit       Adders := 2     
-	   2 Input    3 Bit       Adders := 3     
-+---Registers : 
-	              128 Bit    Registers := 1     
-	               33 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	               28 Bit    Registers := 7     
-	               25 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 8     
-	                7 Bit    Registers := 2     
-	                3 Bit    Registers := 6     
-	                1 Bit    Registers := 36    
-+---Muxes : 
-	   4 Input  177 Bit        Muxes := 1     
-	   2 Input  128 Bit        Muxes := 39    
-	   8 Input  128 Bit        Muxes := 2     
-	   2 Input   33 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 2     
-	   8 Input   32 Bit        Muxes := 1     
-	   2 Input   28 Bit        Muxes := 1     
-	   8 Input   28 Bit        Muxes := 1     
-	   8 Input   25 Bit        Muxes := 1     
-	   2 Input   24 Bit        Muxes := 1     
-	   2 Input   16 Bit        Muxes := 18    
-	   4 Input   16 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 4     
-	   8 Input    8 Bit        Muxes := 3     
-	   4 Input    7 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 1     
-	   8 Input    5 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 1     
-	   4 Input    4 Bit        Muxes := 1     
-	   4 Input    3 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 6     
-	   8 Input    3 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 2     
-	   8 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 79    
-	   4 Input    1 Bit        Muxes := 11    
-	   8 Input    1 Bit        Muxes := 22    
----------------------------------------------------------------------------------
-Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Part Resource Summary
----------------------------------------------------------------------------------
-Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
----------------------------------------------------------------------------------
-Finished Part Resource Summary
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Cross Boundary and Area Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1030.043 ; gain = 24.680
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1029.000 ; gain = 26.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1030.043 ; gain = 24.680
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1029.000 ; gain = 26.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1057.355 ; gain = 51.992
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.523 ; gain = 30.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[31] ) from module (top) as it is equivalent to (\u/currentState_reg[31]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[30] ) from module (top) as it is equivalent to (\u/currentState_reg[30]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[29] ) from module (top) as it is equivalent to (\u/currentState_reg[29]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[28] ) from module (top) as it is equivalent to (\u/currentState_reg[28]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[27] ) from module (top) as it is equivalent to (\u/currentState_reg[27]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[26] ) from module (top) as it is equivalent to (\u/currentState_reg[26]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[25] ) from module (top) as it is equivalent to (\u/currentState_reg[25]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[24] ) from module (top) as it is equivalent to (\u/currentState_reg[24]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[23] ) from module (top) as it is equivalent to (\u/currentState_reg[23]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[22] ) from module (top) as it is equivalent to (\u/currentState_reg[22]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[21] ) from module (top) as it is equivalent to (\u/currentState_reg[21]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[20] ) from module (top) as it is equivalent to (\u/currentState_reg[20]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[19] ) from module (top) as it is equivalent to (\u/currentState_reg[19]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[18] ) from module (top) as it is equivalent to (\u/currentState_reg[18]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[17] ) from module (top) as it is equivalent to (\u/currentState_reg[17]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[16] ) from module (top) as it is equivalent to (\u/currentState_reg[16]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[15] ) from module (top) as it is equivalent to (\u/currentState_reg[15]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[14] ) from module (top) as it is equivalent to (\u/currentState_reg[14]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[13] ) from module (top) as it is equivalent to (\u/currentState_reg[13]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[12] ) from module (top) as it is equivalent to (\u/currentState_reg[12]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[11] ) from module (top) as it is equivalent to (\u/currentState_reg[11]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[10] ) from module (top) as it is equivalent to (\u/currentState_reg[10]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[9] ) from module (top) as it is equivalent to (\u/currentState_reg[9]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[8] ) from module (top) as it is equivalent to (\u/currentState_reg[8]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[7] ) from module (top) as it is equivalent to (\u/currentState_reg[7]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[6] ) from module (top) as it is equivalent to (\u/currentState_reg[6]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[5] ) from module (top) as it is equivalent to (\u/currentState_reg[5]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[4] ) from module (top) as it is equivalent to (\u/currentState_reg[4]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[3] ) from module (top) as it is equivalent to (\u/currentState_reg[3]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[2] ) from module (top) as it is equivalent to (\u/currentState_reg[2]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[1] ) from module (top) as it is equivalent to (\u/currentState_reg[1]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
-INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[0] ) from module (top) as it is equivalent to (\u/currentState_reg[0]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:73]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[31] ) from module (top) as it is equivalent to (\u/currentState_reg[31]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[30] ) from module (top) as it is equivalent to (\u/currentState_reg[30]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[29] ) from module (top) as it is equivalent to (\u/currentState_reg[29]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[28] ) from module (top) as it is equivalent to (\u/currentState_reg[28]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[27] ) from module (top) as it is equivalent to (\u/currentState_reg[27]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[26] ) from module (top) as it is equivalent to (\u/currentState_reg[26]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[25] ) from module (top) as it is equivalent to (\u/currentState_reg[25]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[24] ) from module (top) as it is equivalent to (\u/currentState_reg[24]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[23] ) from module (top) as it is equivalent to (\u/currentState_reg[23]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[22] ) from module (top) as it is equivalent to (\u/currentState_reg[22]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[21] ) from module (top) as it is equivalent to (\u/currentState_reg[21]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[20] ) from module (top) as it is equivalent to (\u/currentState_reg[20]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[19] ) from module (top) as it is equivalent to (\u/currentState_reg[19]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[18] ) from module (top) as it is equivalent to (\u/currentState_reg[18]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[17] ) from module (top) as it is equivalent to (\u/currentState_reg[17]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[16] ) from module (top) as it is equivalent to (\u/currentState_reg[16]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[15] ) from module (top) as it is equivalent to (\u/currentState_reg[15]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[14] ) from module (top) as it is equivalent to (\u/currentState_reg[14]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[13] ) from module (top) as it is equivalent to (\u/currentState_reg[13]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[12] ) from module (top) as it is equivalent to (\u/currentState_reg[12]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[11] ) from module (top) as it is equivalent to (\u/currentState_reg[11]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[10] ) from module (top) as it is equivalent to (\u/currentState_reg[10]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[9] ) from module (top) as it is equivalent to (\u/currentState_reg[9]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[8] ) from module (top) as it is equivalent to (\u/currentState_reg[8]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[7] ) from module (top) as it is equivalent to (\u/currentState_reg[7]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[6] ) from module (top) as it is equivalent to (\u/currentState_reg[6]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[5] ) from module (top) as it is equivalent to (\u/currentState_reg[5]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[4] ) from module (top) as it is equivalent to (\u/currentState_reg[4]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[3] ) from module (top) as it is equivalent to (\u/currentState_reg[3]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[2] ) from module (top) as it is equivalent to (\u/currentState_reg[2]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[1] ) from module (top) as it is equivalent to (\u/currentState_reg[1]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
+INFO: [Synth 8-4765] Removing register instance (\u/currentState_reg[0] ) from module (top) as it is equivalent to (\u/currentState_reg[0]__0 ) and driving same net [C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.srcs/sources_1/new/userland.sv:82]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1047.078 ; gain = 44.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -738,37 +401,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1048.094 ; gain = 45.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1048.094 ; gain = 45.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1048.094 ; gain = 45.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1048.094 ; gain = 45.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1048.094 ; gain = 45.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1048.094 ; gain = 45.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -788,40 +451,41 @@ Report Cell Usage:
 +------+------------+------+
 |1     |clk_wiz     |     1|
 |2     |mig_7series |     1|
-|3     |CARRY4      |    29|
+|3     |CARRY4      |    36|
 |4     |LUT1        |    50|
-|5     |LUT2        |    24|
-|6     |LUT3        |   130|
-|7     |LUT4        |    48|
-|8     |LUT5        |   109|
-|9     |LUT6        |   353|
-|10    |MUXF7       |     8|
-|11    |FDRE        |   573|
-|12    |FDSE        |     1|
-|13    |IBUF        |     2|
-|14    |OBUF        |    30|
-|15    |OBUFT       |    15|
+|5     |LUT2        |    23|
+|6     |LUT3        |   107|
+|7     |LUT4        |   181|
+|8     |LUT5        |   128|
+|9     |LUT6        |   364|
+|10    |MUXF7       |    36|
+|11    |MUXF8       |     8|
+|12    |FDRE        |   585|
+|13    |FDSE        |     1|
+|14    |IBUF        |     2|
+|15    |OBUF        |    28|
+|16    |OBUFT       |    17|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1048.094 ; gain = 45.770
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:00:53 . Memory (MB): peak = 1075.434 ; gain = 45.391
-Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1075.434 ; gain = 70.070
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 1048.094 ; gain = 19.094
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1048.094 ; gain = 45.770
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1078.309 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1060.117 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 80 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1078.309 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1060.117 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-80 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+81 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1078.309 ; gain = 72.945
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1060.117 ; gain = 57.793
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Raphael/Documents/Uni/FYP/Fpgastuff/ddr3_build2.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 10 19:06:04 2021...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 11 14:22:36 2021...
