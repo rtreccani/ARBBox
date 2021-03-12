@@ -87,7 +87,7 @@ usb_IF usb();
 wire [7:0] usbByte;
 wire usbNewByte;
 
-serialRx #(.CLK_PER_BIT(81)) sr(
+serialRx #(.CLK_PER_BIT(27)) sr(
 	.clk(ui_clk),
 	.rst(ui_rst),
 	.rx(usb_rx),
@@ -108,7 +108,7 @@ usbWidthSelector wsl( //copyright bruh moment
 
 assign io_led[20:18] = usb.dataWidth;
 
-serialTx #(.CLK_PER_BIT(81)) st(
+serialTx #(.CLK_PER_BIT(27)) st(
 	.clk(ui_clk),
 	.rst(ui_rst),
 	.tx(usb_tx),

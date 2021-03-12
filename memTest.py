@@ -3,7 +3,7 @@ import random
 import signal
 import time
 
-ser = serial.Serial('COM15', 1000000)
+ser = serial.Serial('COM15', 3000000)
 ser.flush()
 
 def handler(signum, frame):
@@ -76,7 +76,7 @@ SAMPLES = 4000
 
 testSeq = []
 for i in range(0,SAMPLES):
-    testSeq.append(0)
+    testSeq.append (0)
 
 
 while True:
@@ -89,6 +89,8 @@ while True:
     #     writeToRam(addr,val)
     burstWrite(0, testSeq)
     a = burstRead(0, SAMPLES)
+    toc = time.time() - tic
+
     if(a != bytes(testSeq)):
         print("two sequences not equal")
         ser.close()
@@ -98,5 +100,5 @@ while True:
     #     readFromRam(addr, val)
 
     toc = time.time() - tic
-    print('successfully wrote and read back ', SAMPLES, ' bytes in ', toc, " seconds, data rate ", SAMPLES/toc, "B/s")
+    print('successfully wrote and read back ', SAMPLES, ' bytes in ', toc, " seconds, data rate ", 2*SAMPLES/toc, "B/s")
 
