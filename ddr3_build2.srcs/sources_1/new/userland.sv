@@ -51,7 +51,7 @@ end
 
 reg [7:0] cmd;
 reg [31:0] addr;
-reg [7:0] data;
+reg [15:0] data;
 reg [31:0] burstPtr;
 reg [31:0] burstLen;
 
@@ -66,8 +66,8 @@ initial begin
 	nextState <= IDLE;
 end
 
-assign io.led[15:8] = burstLen[7:0];
-assign io.led[7:0] = cmd;
+assign io.led[15:0] = ddr.rd_data;
+
 
 always @(posedge clk) begin
 
@@ -104,15 +104,15 @@ always @(posedge clk) begin
 		end
 		
 		DATA_SET : begin
-			usb.dataWidth <= 'b001;
+			usb.dataWidth <= 'b010;
 			if(usb.newDataIn) begin
-				data <= usb.dataIn[7:0];
+				data <= usb.dataIn[15:0];
 				nextState <= WRITE;
 			end
 		end
 		
 		WRITE : begin
-			usb.dataWidth <= 'b001;
+			usb.dataWidth <= 'b010;
 			if(ddr.wr_ready) begin
 				ddr.wr_addr <= addr[27:0];
 				ddr.wr_data <= data;
