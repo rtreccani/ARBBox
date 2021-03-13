@@ -1,7 +1,7 @@
 val = 0
 import serial
 
-ser = serial.Serial('COM15', 9600) #1000000)
+ser = serial.Serial('COM15', 3000000) #1000000)
 
 
 while (True):

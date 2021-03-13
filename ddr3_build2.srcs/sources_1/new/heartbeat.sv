@@ -2,6 +2,7 @@ module heartbeat #(
 	parameter CLKFREQ = 100000000
 	)(
 	input clk,
+	input rst,
 	output reg beat
 );
 
@@ -11,11 +12,16 @@ initial begin
 	counter = 'b0;
 end
 
-always @(posedge clk) begin
+always @(posedge clk, posedge rst) begin
 	counter <= counter + 1;
+	beat <= 'b0;
 	if(counter == CLKFREQ) begin
 		counter <= 0;
-		beat <= ~beat;
+		beat <= 'b1;
+	end
+	if(rst) begin
+		counter <= 0;
+		beat <= 'b0;
 	end
 end
 
