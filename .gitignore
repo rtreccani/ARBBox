@@ -1,5 +1,6 @@
 ddr3_build2.cache/*
 ddr3_build2.gen/*
 ddr3_build2.hw/*
-ddr3_build2.runs
+ddr3_build2.runs/*
 ddr3_build2.sim/*
+ddr3_build2.ip_user_files/*
