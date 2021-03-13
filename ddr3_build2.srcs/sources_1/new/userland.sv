@@ -55,12 +55,10 @@ reg [7:0] data;
 reg [31:0] burstPtr;
 reg [31:0] burstLen;
 
-reg [2:0] dataW;
 
 reg [7:0] burstReadCache;
 reg burstReadCacheDirty;
 
-assign usb.dataWidth = dataW;
 
 
 initial begin 
@@ -74,7 +72,7 @@ assign io.led[7:0] = cmd;
 always @(posedge clk) begin
 
 	//sensible defaults
-	dataW <= 'b001; 
+	usb.dataWidth <= 'b001; 
 	ddr.wr_valid <= 'b0;
 	ddr.flush <= 'b0;
 	ddr.rd_cmd_valid <= 'b0;
@@ -84,7 +82,7 @@ always @(posedge clk) begin
 	
 	case(currentState)
 		IDLE : begin
-			dataW <= 'b001;
+			usb.dataWidth <= 'b001;
 			if(usb.newDataIn) begin
 				cmd <= usb.dataIn[7:0];
 				nextState <= ADDR_SET;
@@ -92,7 +90,7 @@ always @(posedge clk) begin
 		end
 		
 		ADDR_SET : begin
-			dataW <= 'b100;
+			usb.dataWidth <= 'b100;
 			if(usb.newDataIn) begin
 				addr <= usb.dataIn[31:0];
 				case(cmd)
@@ -106,7 +104,7 @@ always @(posedge clk) begin
 		end
 		
 		DATA_SET : begin
-			dataW <= 'b001;
+			usb.dataWidth <= 'b001;
 			if(usb.newDataIn) begin
 				data <= usb.dataIn[7:0];
 				nextState <= WRITE;
@@ -114,7 +112,7 @@ always @(posedge clk) begin
 		end
 		
 		WRITE : begin
-			dataW <= 'b001;
+			usb.dataWidth <= 'b001;
 			if(ddr.wr_ready) begin
 				ddr.wr_addr <= addr[27:0];
 				ddr.wr_data <= data;
@@ -124,7 +122,7 @@ always @(posedge clk) begin
 		end
 		
 		READ : begin
-			dataW <= 'b001;
+			usb.dataWidth <= 'b001;
 			if(ddr.rd_ready) begin
 				ddr.rd_addr <= addr[27:0];
 				ddr.rd_cmd_valid <= 'b1;
@@ -133,7 +131,7 @@ always @(posedge clk) begin
 		end
 		
 		READ_DELAY : begin
-			dataW <= 'b001;
+			usb.dataWidth <= 'b001;
 			if(ddr.rd_data_valid) begin
 				usb.dataOut <= ddr.rd_data;
 				usb.newDataOut <= 'b1;
@@ -143,7 +141,7 @@ always @(posedge clk) begin
 		
 		
 		BURSTW_LENSET : begin
-			dataW <= 'b100;
+			usb.dataWidth <= 'b100;
 			if(usb.newDataIn) begin
 				burstPtr <= addr;
 				burstLen <= usb.dataIn[27:0];
@@ -152,7 +150,7 @@ always @(posedge clk) begin
 		end
 		
 		BURSTW : begin
-			dataW <= 'b001;
+			usb.dataWidth <= 'b001;
 			if(usb.newDataIn) begin
 				ddr.wr_addr <= burstPtr;
 				ddr.wr_data <= usb.dataIn;
@@ -167,7 +165,7 @@ always @(posedge clk) begin
 		end
 		
 		BURSTR_LENSET : begin
-			dataW <= 'b100;
+			usb.dataWidth <= 'b100;
 			if(usb.newDataIn) begin
 				burstPtr <= addr;
 				burstLen <= usb.dataIn[27:0];
@@ -176,7 +174,7 @@ always @(posedge clk) begin
 		end
 		
 		BURSTR : begin
-			dataW <= 'b001;
+			usb.dataWidth <= 'b001;
 			//handle new data from DDR
 			if(ddr.rd_data_valid) begin
 				burstReadCache <= ddr.rd_data;
