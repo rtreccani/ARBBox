@@ -24,12 +24,31 @@ typedef enum {
 	SETTING_AWAIT,
 	PLAYBACK
 } state_t;
-
 //instantiate two state variables (to infer a D/Q latch)
 //onehot encoding should simplify the logic under the hood
 (* fsm_encoding = "one_hot" *) state_t currentState;
 (* fsm_encoding = "one_hot" *) state_t nextState;
 
+
+typedef enum {
+	ONESHOT = 2'b00,
+	REPEAT_N = 2'b01,
+	REPEAT_INF = 2'b10
+} playMode_t;
+
+playMode_t playMode;
+
+
+//on first boot move into the IDLE state 
+initial begin 
+	playMode <= ONESHOT;
+	currentState <= DISCONNECTED;
+	nextState <= DISCONNECTED;
+end
+
+enum {
+	PLAYMODE
+} settingMap_t;
 
 //indicate current State on the LEDs and shift new state across
 always @(posedge clk) begin
@@ -45,13 +64,11 @@ always @(posedge clk) begin
 	endcase
 end
 
-//on first boot move into the IDLE state 
-initial begin 
-	currentState <= DISCONNECTED;
-	nextState <= DISCONNECTED;
-end
+reg [31:0] loadPtr;
+reg [31:0] loadLen;
 
-
+wire [1:0] inBandSignal;
+assign inBandSignal = usb.dataIn[1:0];
 
 always @(posedge clk) begin
 	//sensible defaults
@@ -97,11 +114,11 @@ always @(posedge clk) begin
 			usb.dataWidth <= 'b001;
 			//handle incoming USB data and set next state if necessary
 			if(usb.newDataIn) begin
-				case(usb.dataIn)
+				case(usb.dataIn[7:0])
 					'd76 	: nextState <= LOADLEN_AWAIT;
 					'd80 	: nextState <= PLAYBACK;
 					'd83 	: nextState <= SETTING_AWAIT;
-					'd83	: begin
+					'd64	: begin
 						usb.dataOut <= 'd133;
 						usb.newDataOut <= 'b1;
 						heartbeatRst <= 'b1;
@@ -115,7 +132,54 @@ always @(posedge clk) begin
 				usb.newDataOut <= 'b1;
 			end
 		end
-	
+		
+		LOADLEN_AWAIT : begin
+			usb.dataWidth <= 'b100;
+			loadPtr <= 'b0;
+			if(usb.newDataIn) begin
+				loadLen <= usb.dataIn;
+				nextState <= LOAD;
+				heartbeatRst <= 'b1;
+			end
+			if(heartbeatPulse) begin
+				nextState <= DISCONNECTED;
+			end
+		end
+		
+		LOAD : begin
+			usb.dataWidth <= 'b010; 
+			if(usb.newDataIn) begin
+				ddr.wr_addr <= loadPtr;
+				ddr.wr_data <= {usb.dataIn[15:2], 2'b00};
+				ddr.wr_valid <= 'b1;
+				heartbeatRst <= 'b1;
+				if(inBandSignal == 'b11) begin
+					//host device instructs load stop
+					nextState <= IDLE;
+				end
+			end
+			if(heartbeatPulse) begin
+				//if no response in heartbeat period, 
+				//assume disconnected
+				nextState <= DISCONNECTED;
+			end
+			//handle the load length and load pointers			
+			if(loadLen == 'b0) begin
+				//load finished successfully
+				nextState <= IDLE;
+			end else begin
+				loadLen--;
+				loadPtr++;
+			end
+		end
+		
+		SETTING_AWAIT : begin
+			if(usb.newDataIn) begin
+			
+			end
+		
+		end	
+			
 	endcase
 	
 end
