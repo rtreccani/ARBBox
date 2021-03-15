@@ -122,37 +122,9 @@ reg             M_cache_flush;
 reg     [130:0] M_cache_mem_out;
 
 
-usb_IF usb();
-
-serialRx #(.CLK_PER_BIT(705)) sr(
-	.clk(M_mig_ui_clk),
-	.rst(M_mig_sys_rst),
-	.rx(usb_rx),
-	.data(usb.dataIn),
-	.new_data(usb.newDataIn)
-);
-
-serialTx #(.CLK_PER_BIT(705)) st(
-	.clk(M_mig_ui_clk),
-	.rst(M_mig_sys_rst),
-	.tx(usb_tx),
-	.data(usb.dataOut),
-	.new_data(usb.newDataOut),
-	.block('b0)
-);
-
-
 ddr3_IF ddr();
 
-
-
-userland u(
-	.ddr(ddr),
-	.io(io),
-	.clk(M_mig_ui_clk),
-	.rst(M_mig_sys_rst),
-	.usb(usb)
-);
+usb_IF usb();
 
 lru_cache_2 cache (
     .clk(M_mig_ui_clk),
@@ -172,6 +144,13 @@ lru_cache_2 cache (
     .mem_in(M_cache_mem_in)
 );
 
+userland u(
+	.clk(M_mig_ui_clk),
+	.rst(M_mig_sync_rst),
+	.io(io),
+	.ddr(ddr),
+	.usb(usb)
+);
 
 
 always @(*) begin
@@ -195,6 +174,9 @@ always @(*) begin
     rst = M_mig_sync_rst;
     M_mig_mem_in = M_cache_mem_in;
     M_cache_mem_out = M_mig_mem_out;
-end
+end//whatever 
+
+
+
   
 endmodule
