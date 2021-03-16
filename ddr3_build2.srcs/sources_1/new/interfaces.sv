@@ -1,12 +1,12 @@
 interface ddr3_IF;
 	logic [27:0] wr_addr;
-	logic [15:0] wr_data;
+	logic [127:0] wr_data;
 	logic wr_valid;
 	logic wr_ready;
 	logic [27:0] rd_addr;
 	logic rd_cmd_valid;
 	logic rd_ready;
-	logic [15:0] rd_data;
+	logic [127:0] rd_data;
 	logic rd_data_valid;
 	logic flush;
 	logic flush_ready;

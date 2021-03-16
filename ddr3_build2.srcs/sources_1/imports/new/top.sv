@@ -125,7 +125,7 @@ userland u(
 	.rst(ui_rst),
 	.usb(usb)
 );
-lru_cache_16 cache (
+lru_cache_128 cache (
     .clk(ui_clk),
     .rst(ui_rst),
     .wr_addr(ddr.wr_addr),
