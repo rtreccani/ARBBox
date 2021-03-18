@@ -102,8 +102,8 @@ usbWidthSelector wsl( //copyright bruh moment
 	.byteIn(usbByte),
 	.newByteIn(usbNewByte),
 	.wordOut(usb.dataIn),
-	.newWordOut(usb.newDataIn),
-	.available(io_led[23:21])
+	.newWordOut(usb.newDataIn)
+	//.available(io_led[23:21])
 );
 
 assign io_led[20:18] = usb.dataWidth;
@@ -125,7 +125,8 @@ userland u(
 	.rst(ui_rst),
 	.usb(usb)
 );
-lru_cache_16 cache (
+
+lru_cache_128 cache (
     .clk(ui_clk),
     .rst(ui_rst),
     .wr_addr(ddr.wr_addr),

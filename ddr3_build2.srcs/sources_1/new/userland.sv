@@ -16,27 +16,41 @@ heartbeat #(.CLKFREQ(81250000)) h(
 );
 
 //enumerate all the possible states of the statemachine
-typedef enum {
-	IDLE,
-	DISCONNECTED,
-	LOADLEN_AWAIT,
-	LOAD,
-	SETTING_AWAIT,
-	PLAYBACK
-} state_t;
+
 //instantiate two state variables (to infer a D/Q latch)
 //onehot encoding should simplify the logic under the hood
 (* fsm_encoding = "one_hot" *) state_t currentState;
 (* fsm_encoding = "one_hot" *) state_t nextState;
 
 
-typedef enum {
-	ONESHOT = 2'b00,
-	REPEAT_N = 2'b01,
-	REPEAT_INF = 2'b10
-} playMode_t;
-
 playMode_t playMode;
+
+
+reg [127:0] currentLine;
+reg [127:0] prefetchLine;
+
+wire [23:0] prefetchAddress;
+
+reg [31:0] loadPtr;
+reg [31:0] loadLen;
+
+reg [31:0] playbackPtr;
+reg [31:0] playbackLen;
+
+wire [1:0] inBandSignal;
+assign inBandSignal = usb.dataIn[1:0];
+
+
+
+
+prefetchAddressCalculator prefetchAddr(
+	.currentAddress(playbackPtr),
+	.maxAddress(playbackLen),
+	.nextLineAddress(prefetchAddress)
+);
+
+prefetch_state_t currentPrefetchState;
+prefetch_state_t nextPrefetchState;
 
 
 //on first boot move into the IDLE state 
@@ -46,29 +60,24 @@ initial begin
 	nextState <= DISCONNECTED;
 end
 
-enum {
-	PLAYMODE
-} settingMap_t;
+
 
 //indicate current State on the LEDs and shift new state across
 always @(posedge clk) begin
 	currentState <= nextState;
+	currentPrefetchState <= nextPrefetchState;
 	case (currentState)
-		IDLE :			io.sys_led[3:0] = 'b0001;
-		DISCONNECTED :  io.sys_led[3:0] = 'b0010;
-		LOADLEN_AWAIT : io.sys_led[3:0] = 'b0011;
-		LOAD          : io.sys_led[3:0] = 'b0100;
-		SETTING_AWAIT : io.sys_led[3:0] = 'b0101;
-		PLAYBACK      : io.sys_led[3:0] = 'b0110;
-		default       : io.sys_led[3:0] = 'b1111;
+		IDLE              :	io.sys_led[3:0] = 'b0001;
+		DISCONNECTED      : io.sys_led[3:0] = 'b0010;
+		LOADLEN_AWAIT 	  : io.sys_led[3:0] = 'b0011;
+		LOAD              : io.sys_led[3:0] = 'b0100;
+		SETTING_AWAIT     : io.sys_led[3:0] = 'b0101;
+		PLAYBACK_PRELOAD  : io.sys_led[3:0] = 'b0110;
+		PLAYBACK          : io.sys_led[3:0] = 'b0111;
+		default           : io.sys_led[3:0] = 'b1111;
 	endcase
 end
 
-reg [31:0] loadPtr;
-reg [31:0] loadLen;
-
-wire [1:0] inBandSignal;
-assign inBandSignal = usb.dataIn[1:0];
 
 always @(posedge clk) begin
 	//sensible defaults
@@ -116,7 +125,7 @@ always @(posedge clk) begin
 			if(usb.newDataIn) begin
 				case(usb.dataIn[7:0])
 					'd76 	: nextState <= LOADLEN_AWAIT;
-					'd80 	: nextState <= PLAYBACK;
+					'd80 	: nextState <= PLAYBACK_PRELOAD;
 					'd83 	: nextState <= SETTING_AWAIT;
 					'd64	: begin
 						usb.dataOut <= 'd133;
@@ -147,10 +156,14 @@ always @(posedge clk) begin
 		end
 		
 		LOAD : begin
-			usb.dataWidth <= 'b010; 
+			//since the usb buffer width is now 16 bytes,
+			//the data needs to be aligned to that length
+			//and the load length needs to be divided by 16 
+			//or by 8 if we're using sample size.
+			usb.dataWidth <= 'b10000; 
 			if(usb.newDataIn) begin
 				ddr.wr_addr <= loadPtr;
-				ddr.wr_data <= {usb.dataIn[15:2], 2'b00};
+				ddr.wr_data <= {usb.dataIn[127:2], 2'b00};
 				ddr.wr_valid <= 'b1;
 				heartbeatRst <= 'b1;
 				if(inBandSignal == 'b11) begin
@@ -175,10 +188,46 @@ always @(posedge clk) begin
 		
 		SETTING_AWAIT : begin
 			if(usb.newDataIn) begin
-			
+				
 			end
-		
 		end	
+		
+		PLAYBACK_PRELOAD : begin
+			case(currentPrefetchState)
+				CACHE_DIRTY : begin
+					ddr.rd_addr <= 'b0;
+					ddr.rd_cmd_valid <= 'b1;
+					nextPrefetchState <= REQUEST_SENT;
+				end
+				
+				REQUEST_SENT : begin
+					if(ddr.rd_data_valid) begin
+						currentLine <= ddr.rd_data;
+						nextPrefetchState <= CACHE_CLEAN;
+					end
+				end
+				
+				CACHE_CLEAN : begin
+					nextState <= PLAYBACK;
+				end
+			endcase
+		end
+		
+		PLAYBACK : begin
+			case(currentPrefetchState)
+				CACHE_DIRTY : begin
+					ddr.rd_addr <= prefetchAddress;
+					ddr.rd_cmd_valid <= 'b1;
+				end
+				
+				REQUEST_SENT : begin
+					if(ddr.rd_data_valid) begin
+						prefetchLine <= ddr.rd_data;
+						nextPrefetchState <= CACHE_CLEAN;
+					end
+				end
+			endcase
+		end
 			
 	endcase
 	

@@ -1,12 +1,12 @@
 interface ddr3_IF;
-	logic [26:0] wr_addr;
-	logic [15:0] wr_data;
+	logic [23:0] wr_addr;
+	logic [127:0] wr_data;
 	logic wr_valid;
 	logic wr_ready;
-	logic [26:0] rd_addr;
+	logic [23:0] rd_addr;
 	logic rd_cmd_valid;
 	logic rd_ready;
-	logic [15:0] rd_data;
+	logic [127:0] rd_data;
 	logic rd_data_valid;
 	logic flush;
 	logic flush_ready;
@@ -25,9 +25,9 @@ endinterface : ddr3_IF
  endinterface : io_IF
  
  interface usb_IF;
- 	logic [31:0] dataIn;
+ 	logic [127:0] dataIn;
  	logic newDataIn;
- 	logic [2:0] dataWidth;
+ 	logic [5:0] dataWidth;
  	logic block;
  	logic busyOut;
  	logic [7:0] dataOut;
