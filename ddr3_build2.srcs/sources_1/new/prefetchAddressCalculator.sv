@@ -6,7 +6,8 @@
 module prefetchAddressCalculator(
 	input [31:0] currentAddress,
 	input [31:0] maxAddress,
-	output [23:0] nextLineAddress
+	output [23:0] nextLineAddress,
+	output reg cacheLineEnd
 );
 
 wire [23:0] currentBlockAddress;
@@ -21,9 +22,14 @@ initial begin
 end
 
 always @(*) begin
+	cacheLineEnd <= 'b0;
 	outputBlockAddress <= currentBlockAddress + 'b1;
 	if(currentBlockAddress <= maxBlockAddress) begin
 		outputBlockAddress <= 'b0;
+	end
+	//flag raised at the end of a cache line to dirty the cache
+	if(currentAddress % 'b10000 == 'b01111) begin
+		cacheLineEnd <= 'b1;
 	end
 end	
 endmodule

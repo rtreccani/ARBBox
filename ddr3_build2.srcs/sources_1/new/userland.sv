@@ -39,14 +39,15 @@ reg [31:0] playbackLen;
 
 wire [1:0] inBandSignal;
 assign inBandSignal = usb.dataIn[1:0];
-
+wire cacheLineDirty;
 
 
 
 prefetchAddressCalculator prefetchAddr(
 	.currentAddress(playbackPtr),
 	.maxAddress(playbackLen),
-	.nextLineAddress(prefetchAddress)
+	.nextLineAddress(prefetchAddress),
+	.cacheLineEnd(cacheLineDirty)
 );
 
 prefetch_state_t currentPrefetchState;
@@ -203,12 +204,11 @@ always @(posedge clk) begin
 				REQUEST_SENT : begin
 					if(ddr.rd_data_valid) begin
 						currentLine <= ddr.rd_data;
-						nextPrefetchState <= CACHE_CLEAN;
+						//save one clock cycle by immediately beginning playback
+						//and dirtying the cache
+						nextPrefetchState <= CACHE_DIRTY;
+						nextState <= PLAYBACK;
 					end
-				end
-				
-				CACHE_CLEAN : begin
-					nextState <= PLAYBACK;
 				end
 			endcase
 		end
@@ -227,6 +227,13 @@ always @(posedge clk) begin
 					end
 				end
 			endcase
+			
+			if(cacheLineDirty) begin
+				currentPrefetchState <= CACHE_DIRTY;
+				currentLine <= prefetchLine;
+			end
+			
+			
 		end
 			
 	endcase
