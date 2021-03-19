@@ -22,20 +22,33 @@ heartbeat #(.CLKFREQ(81250000)) h(
 (* fsm_encoding = "one_hot" *) state_t currentState;
 (* fsm_encoding = "one_hot" *) state_t nextState;
 
+//instantiate a settings struct to hold all the named values
+//in the style of a key-value pair 
+settings_t settings;
 
-playMode_t playMode;
-
-
+//create a variable to hold the cache line which is currently being pulled
 reg [127:0] currentLine;
-reg [127:0] prefetchLine;
+//this unpacked array will store the 128 bits as 8 16 bit words
+wire [15:0] currentLineAsWords [16];
+//unpack the cache line into words
+assign {>>{currentLineAsWords}} = currentLine;
 
+//storage for the 128 bits which has been prefetched. 
+reg [127:0] prefetchLine;
+//the address which should be prefetched in preperation for emptying the current line
 wire [23:0] prefetchAddress;
 
+//pointer for loading data in
 reg [31:0] loadPtr;
+//decrementer for how much data is yet to be loaded.
 reg [31:0] loadLen;
 
+//pointer for current playback address
 reg [31:0] playbackPtr;
-reg [31:0] playbackLen;
+//slice of the playbackptr which is routed to the current cache line. 
+wire [3:0] playbackLinePtr;
+assign playbackLinePtr = playbackPtr[3:0];
+
 
 wire [1:0] inBandSignal;
 assign inBandSignal = usb.dataIn[1:0];
@@ -45,7 +58,7 @@ wire cacheLineDirty;
 
 prefetchAddressCalculator prefetchAddr(
 	.currentAddress(playbackPtr),
-	.maxAddress(playbackLen),
+	.maxAddress(settings.playbackLen),
 	.nextLineAddress(prefetchAddress),
 	.cacheLineEnd(cacheLineDirty)
 );
@@ -56,7 +69,7 @@ prefetch_state_t nextPrefetchState;
 
 //on first boot move into the IDLE state 
 initial begin 
-	playMode <= ONESHOT;
+	settings.loopMode <= ONESHOT;
 	currentState <= DISCONNECTED;
 	nextState <= DISCONNECTED;
 end
@@ -188,8 +201,14 @@ always @(posedge clk) begin
 		end
 		
 		SETTING_AWAIT : begin
+			usb.dataWidth <= 'b00101; //5 bytes from USB. 1 byte for setting address, 4 bytes setting data
+			//overkill but simple
 			if(usb.newDataIn) begin
-				
+				case(usb.dataIn[7:0])
+					'h0 : settings.playbackLen <= usb.newDataIn[39:8];
+					'h1 : settings.loopMode <= usb.newDataIn[9:8];
+					'h2 : settings.loopCount <= usb.newDataIn[39:8];
+				endcase
 			end
 		end	
 		
@@ -233,8 +252,26 @@ always @(posedge clk) begin
 				currentLine <= prefetchLine;
 			end
 			
+			playbackPtr++;
+			//handle resetting the pointer when we reach the end of the sample
+			if (playbackPtr == settings.playbackLen) begin
+				playbackPtr <= 'b0;
+				case(settings.loopMode)
+					ONESHOT : nextState <= IDLE;
+					REPEAT_N : begin
+						settings.loopCount--;
+						if(settings.loopCount == 'b0) begin
+							nextState <= IDLE;
+						end
+					end
+					//default and REPEAT_INF are the same no action taken
+				endcase
+			end
 			
+			io.led[15:0] <= currentLineAsWords[playbackLinePtr];
 		end
+		
+		
 			
 	endcase
 	

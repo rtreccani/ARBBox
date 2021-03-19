@@ -5,9 +5,9 @@ typedef enum {
 } prefetch_state_t;
 
 typedef enum {
-	ONESHOT = 2'b00,
-	REPEAT_N = 2'b01,
-	REPEAT_INF = 2'b10
+	ONESHOT = 2'b01,
+	REPEAT_N = 2'b10,
+	REPEAT_INF = 2'b11
 } playMode_t;
 
 typedef enum {
