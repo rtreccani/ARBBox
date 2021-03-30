@@ -201,13 +201,25 @@ always @(posedge clk) begin
 		end
 		
 		SETTING_AWAIT : begin
-			usb.dataWidth <= 'b00101; //5 bytes from USB. 1 byte for setting address, 4 bytes setting data
+			usb.dataWidth <= 'b10000; //16 bytes from USB. padded with 0's if not needed.
 			//overkill but simple
 			if(usb.newDataIn) begin
 				case(usb.dataIn[7:0])
-					'h0 : settings.playbackLen <= usb.newDataIn[39:8];
-					'h1 : settings.loopMode <= usb.newDataIn[9:8];
-					'h2 : settings.loopCount <= usb.newDataIn[39:8];
+					'h0 : settings.playbackLen <= usb.dataIn[39:8];
+					'h1 : settings.loopMode <= usb.dataIn[9:8];
+					'h2 : settings.loopCount <= usb.dataIn[39:8];
+					'h3 : begin
+						settings.t1.startAddr <= usb.dataIn[39:8];
+						settings.t1.endAddr <= usb.dataIn[71:40];
+						settings.t1.enable <= usb.dataIn[72];
+						settings.t2.outpin <= usb.dataIn[80:73];
+					end
+					'h4 : begin
+						settings.t2.startAddr <= usb.dataIn[39:8];
+						settings.t2.endAddr <= usb.dataIn[71:40];
+						settings.t2.enable <= usb.dataIn[72];
+						settings.t2.outpin <= usb.dataIn[80:73];
+					end
 				endcase
 			end
 		end	

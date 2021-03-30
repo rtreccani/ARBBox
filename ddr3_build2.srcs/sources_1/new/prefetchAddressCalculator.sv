@@ -6,7 +6,7 @@
 module prefetchAddressCalculator(
 	input [31:0] currentAddress,
 	input [31:0] maxAddress,
-	output [23:0] nextLineAddress,
+	output reg [23:0] nextLineAddress,
 	output reg cacheLineEnd
 );
 

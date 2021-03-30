@@ -8,7 +8,7 @@ typedef enum {
 	ONESHOT = 2'b01,
 	REPEAT_N = 2'b10,
 	REPEAT_INF = 2'b11
-} playMode_t;
+} playmode_t;
 
 typedef enum {
 	IDLE,
@@ -19,7 +19,3 @@ typedef enum {
 	PLAYBACK_PRELOAD,
 	PLAYBACK
 } state_t;
-
-enum {
-	PLAYMODE
-} settingMap_t;
